@@ -1,0 +1,11 @@
+{
+"rules": [
+{
+"primary-output": "CMakeFiles/RentAct.dir/src/menu/MenuAdmin.cpp.o",
+"requires": [
+]
+}
+],
+"version": 0,
+"revision": 0
+}

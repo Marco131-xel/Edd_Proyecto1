@@ -1,0 +1,15 @@
+ninja_dyndep_version = 1.0
+build CMakeFiles/RentAct.dir/main.cpp.o: dyndep
+
+build CMakeFiles/RentAct.dir/src/menu/MenuUser.cpp.o: dyndep
+
+build CMakeFiles/RentAct.dir/src/login/Login.cpp.o: dyndep
+
+build CMakeFiles/RentAct.dir/src/menu/MenuAdmin.cpp.o: dyndep
+
+build CMakeFiles/RentAct.dir/src/login/LoginAdmin.cpp.o: dyndep
+
+build CMakeFiles/RentAct.dir/src/login/LoginUser.cpp.o: dyndep
+
+build CMakeFiles/RentAct.dir/src/login/Inicio.cpp.o: dyndep
+

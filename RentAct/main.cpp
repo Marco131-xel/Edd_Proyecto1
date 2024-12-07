@@ -1,8 +1,11 @@
 #include <iostream>
 
+#include "include/Inicio.h"
+
 using namespace std;
 
 int main() {
-    cout << "Hello World!" << endl;
+    Inicio start;
+    start.display();
     return 0;
 }

@@ -1,0 +1,26 @@
+switch (option) {
+        case 1:
+            cout << " *** Agregar Activo *** " << endl;
+        break;
+        case 2:
+            cout << " *** Eliminar Activo *** " << endl;
+        break;
+        case 3:
+            cout << " *** Modificar Activo *** " << endl;
+        break;
+        case 4:
+            cout << " *** Rentar Activo *** " << endl;
+        break;
+        case 5:
+            cout << " *** Activos Rentados *** " << endl;
+        break;
+        case 6:
+            cout << " *** Mis Activos Rentados *** " << endl;
+        break;
+        case 7:
+            cout << " Cerrando Sesion .... " << endl;
+        break;
+        default:
+            cout << "Opcion no valida" << endl;
+        break;
+    }
