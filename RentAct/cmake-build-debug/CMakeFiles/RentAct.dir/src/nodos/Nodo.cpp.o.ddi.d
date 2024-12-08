@@ -1,7 +1,7 @@
-CMakeFiles/RentAct.dir/src/menu/MenuAdmin.cpp.o.ddi: \
- /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/menu/MenuAdmin.cpp \
+CMakeFiles/RentAct.dir/src/nodos/Nodo.cpp.o.ddi: \
+ /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/nodos/Nodo.cpp \
  /usr/include/stdc-predef.h \
- /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/menu/../../include/MenuAdmin.h \
+ /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/nodos/../../include/Nodo.h \
  /usr/include/c++/14.2.1/iostream \
  /usr/include/c++/14.2.1/bits/requires_hosted.h \
  /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/c++config.h \
@@ -144,5 +144,4 @@ CMakeFiles/RentAct.dir/src/menu/MenuAdmin.cpp.o.ddi: \
  /usr/include/c++/14.2.1/bits/locale_facets.tcc \
  /usr/include/c++/14.2.1/bits/basic_ios.tcc \
  /usr/include/c++/14.2.1/bits/ostream.tcc /usr/include/c++/14.2.1/istream \
- /usr/include/c++/14.2.1/bits/istream.tcc \
- /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/menu/../../include/Registrar_Usuario.h
+ /usr/include/c++/14.2.1/bits/istream.tcc

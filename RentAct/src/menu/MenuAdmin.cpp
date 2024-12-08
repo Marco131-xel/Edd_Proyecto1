@@ -1,6 +1,9 @@
 #include "../../include/MenuAdmin.h"
+#include "../../include/Registrar_Usuario.h"
+
 using namespace std;
 
+Registrar_Usuario registrar_user;
 // Constructor vacio
 MenuAdmin::MenuAdmin() {
 
@@ -28,9 +31,11 @@ void MenuAdmin::display() {
         switch (opt) {
             case 1:
                 cout << " :::: Registrar Usuario ::::" << endl;
+                registrar_user.registrar();
             break;
             case 2:
-                cout << " :::: Reporte Matriz Dispersa" << endl;
+                cout << " :::: Reporte Matriz Dispersa ::::" << endl;
+                registrar_user.mostrar();
             break;
             case 3:
                 cout << " :::: Reporte Activos Disponibles de un Departamento :::: " << endl;

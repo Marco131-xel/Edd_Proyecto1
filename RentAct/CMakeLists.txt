@@ -15,4 +15,10 @@ add_executable(RentAct main.cpp
         include/LoginAdmin.h
         include/LoginUser.h
         "src/login/Inicio.cpp"
-        include/Inicio.h)
+        include/Inicio.h
+        src/nodos/Nodo.cpp
+        include/Nodo.h
+        src/matriz/MatrizDispersa.cpp
+        include/MatrizDispersa.h
+        src/funciones_admin/Registrar_Usuario.cpp
+        include/Registrar_Usuario.h)

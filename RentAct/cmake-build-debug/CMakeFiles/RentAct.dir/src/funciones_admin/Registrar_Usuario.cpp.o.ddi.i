@@ -1,11 +1,11 @@
-# 0 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/menu/MenuAdmin.cpp"
+# 0 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_admin/Registrar_Usuario.cpp"
 # 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/cmake-build-debug//"
 # 0 "<interno>"
 # 0 "<línea-de-órdenes>"
 # 1 "/usr/include/stdc-predef.h" 1 3 4
 # 0 "<línea-de-órdenes>" 2
-# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/menu/MenuAdmin.cpp"
-# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/menu/../../include/MenuAdmin.h" 1
+# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_admin/Registrar_Usuario.cpp"
+# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_admin/../../include/Registrar_Usuario.h" 1
 
 
 # 1 "/usr/include/c++/14.2.1/iostream" 1 3
@@ -43310,22 +43310,10 @@ namespace std __attribute__ ((__visibility__ ("default")))
 
 
 }
-# 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/menu/../../include/MenuAdmin.h" 2
-
-# 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/menu/../../include/MenuAdmin.h"
-using namespace std;
-
-class MenuAdmin {
-    public:
-        MenuAdmin();
-        void display();
-};
-# 2 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/menu/MenuAdmin.cpp" 2
-# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/menu/../../include/Registrar_Usuario.h" 1
+# 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_admin/../../include/Registrar_Usuario.h" 2
 
 
-
-
+# 5 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_admin/../../include/Registrar_Usuario.h"
 using namespace std;
 
 class Registrar_Usuario {
@@ -43340,68 +43328,70 @@ class Registrar_Usuario {
         void registrar();
         void mostrar();
 };
-# 3 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/menu/MenuAdmin.cpp" 2
+# 2 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_admin/Registrar_Usuario.cpp" 2
+# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_admin/../../include/MatrizDispersa.h" 1
+
+
+# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_admin/../../include/Nodo.h" 1
+
+
+
 
 using namespace std;
 
-Registrar_Usuario registrar_user;
+class Nodo {
+    public:
+        string nombreUsuario;
+        string contrasenia;
+        string nombreCompleto;
 
-MenuAdmin::MenuAdmin() {
+
+        Nodo *next;
+        Nodo *prev;
+        Nodo *up;
+        Nodo *down;
+        Nodo *foward;
+        Nodo *backward;
+
+
+        Nodo(string nombreUsuario, string contrasenia, string nombreCompleto);
+};
+# 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_admin/../../include/MatrizDispersa.h" 2
+
+using namespace std;
+
+class MatrizDispersa {
+    private:
+        Nodo* head;
+    public:
+        MatrizDispersa();
+        void agregarUsuario(string departamento, string empresa, string nombreUsuario,
+            string contrasenia, string nombreComp\U0000013aeto);
+        void mostrarUsuario();
+};
+# 3 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_admin/Registrar_Usuario.cpp" 2
+
+MatrizDispersa matriz;
+Registrar_Usuario::Registrar_Usuario() {
 
 }
 
+void Registrar_Usuario::registrar() {
+    cout << "Ingresar Nombre del Usuario: ";
+    cin >> nombre;
+    cout << "Ingrese la Contrasenia: ";
+    cin >> password;
+    cout << "Ingrese su Nombre Completo: ";
+    cin >> nombre_completo;
+    cout << "Ingrese Departamento: ";
+    cin >> departamento;
+    cout << "Ingrese Empresa: ";
+    cin >> empresa;
+    cout << endl;
 
-void MenuAdmin::display() {
-    int opt;
-    do {
-        cout << "\t :::: Menu de Administrador :::: " << endl;
-        cout << "1. Registrar Usuario" << endl;
-        cout << "2. Reporte Matriz Dispersa" << endl;
-        cout << "3. Reporte Activos Disponibles de un Departamento" << endl;
-        cout << "4. Reporte Activos Disponibles de una Empresa " << endl;
-        cout << "5. Reporte Transacciones " << endl;
-        cout << "6. Reporte Activos de un Usuario" << endl;
-        cout << "7. Activos rentados por un Usuaio" << endl;
-        cout << "8. Ordenar Transacciones" << endl;
-        cout << "9. Cerrar Sesion \n" << endl;
+    matriz.agregarUsuario(departamento, empresa, nombre, password, nombre_completo);
+}
 
-        cout << "Seleccione una Opcion: ";
-        cin >> opt;
-        cout << endl;
-
-        switch (opt) {
-            case 1:
-                cout << " :::: Registrar Usuario ::::" << endl;
-                registrar_user.registrar();
-            break;
-            case 2:
-                cout << " :::: Reporte Matriz Dispersa ::::" << endl;
-                registrar_user.mostrar();
-            break;
-            case 3:
-                cout << " :::: Reporte Activos Disponibles de un Departamento :::: " << endl;
-            break;
-            case 4:
-                cout << " :::: Reporte Activos Disponibles de una Empresa ::::" << endl;
-            break;
-            case 5:
-                cout << " :::: Reporte Transacciones :::: " << endl;
-            break;
-            case 6:
-                cout << " :::: Reporte Activos de un Usuario :::: " << endl;
-            break;
-            case 7:
-                cout << " :::: Activos Rentados por un Usuario :::: " << endl;
-            break;
-            case 8:
-                cout << " :::: Ordenar Transacciones :::: " << endl;
-            break;
-            case 9:
-                cout << "\n\tCerrando Sesion ....\n" << endl;
-            break;
-            default:
-                cout << "\n ** Opcion no valida **\n " << endl;
-            break;
-        }
-    } while (opt != 9);
+void Registrar_Usuario::mostrar() {
+    matriz.mostrarUsuario();
 }
