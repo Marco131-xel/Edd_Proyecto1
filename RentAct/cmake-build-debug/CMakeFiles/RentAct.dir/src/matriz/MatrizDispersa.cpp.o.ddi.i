@@ -43348,6 +43348,7 @@ class MatrizDispersa {
         void agregarUsuario(string departamento, string empresa, string nombreUsuario,
             string contrasenia, string nombreComp\U0000013aeto);
         void mostrarUsuario();
+        bool buscarUsuario(string nombreUsuario, string contrasenia);
 };
 # 2 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/matriz/MatrizDispersa.cpp" 2
 
@@ -43388,4 +43389,18 @@ void MatrizDispersa::mostrarUsuario() {
         cout << "Contrasenia: " << actual->contrasenia << endl;
         actual = actual->next;
     }
+}
+
+
+bool MatrizDispersa::buscarUsuario(string nombreUsuario, string contrasena) {
+    Nodo* actual = head;
+    while (actual != nullptr) {
+
+        if (actual->nombreUsuario == nombreUsuario &&
+            actual->contrasenia == contrasena) {
+            return true;
+            }
+        actual = actual->next;
+    }
+    return false;
 }

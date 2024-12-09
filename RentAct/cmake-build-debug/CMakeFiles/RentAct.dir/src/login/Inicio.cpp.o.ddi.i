@@ -43330,6 +43330,8 @@ using namespace std;
 
 class Login {
     public:
+        string nombre;
+        string password;
         void login_admin();
         void login_user();
 };

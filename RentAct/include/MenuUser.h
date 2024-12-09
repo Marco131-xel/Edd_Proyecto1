@@ -6,7 +6,7 @@ using namespace std;
 class MenuUser {
     public:
         MenuUser();
-        void display();
+        void display(const string& usuario);
 };
 
 #endif //MENU_H

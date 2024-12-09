@@ -43329,6 +43329,9 @@ class Registrar_Usuario {
         void mostrar();
 };
 # 2 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_admin/Registrar_Usuario.cpp" 2
+# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_admin/../../include/Global.h" 1
+
+
 # 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_admin/../../include/MatrizDispersa.h" 1
 
 
@@ -43368,10 +43371,14 @@ class MatrizDispersa {
         void agregarUsuario(string departamento, string empresa, string nombreUsuario,
             string contrasenia, string nombreComp\U0000013aeto);
         void mostrarUsuario();
+        bool buscarUsuario(string nombreUsuario, string contrasenia);
 };
+# 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_admin/../../include/Global.h" 2
+
+
+extern MatrizDispersa matriz;
 # 3 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_admin/Registrar_Usuario.cpp" 2
 
-MatrizDispersa matriz;
 Registrar_Usuario::Registrar_Usuario() {
 
 }

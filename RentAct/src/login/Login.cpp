@@ -2,6 +2,7 @@
 #include "../../include/LoginAdmin.h"
 #include "../../include/MenuAdmin.h"
 #include "../../include/MenuUser.h"
+#include "../../include/Global.h"
 
 // todos los menus
 MenuUser menu_user;
@@ -34,6 +35,16 @@ void Login::login_admin() {
 
 // funcion para usuario
 void Login::login_user() {
-    cout << "\t\n%%%%% USUARIO EN PROCESO %%%%%% \n" << endl;
-    menu_user.display();
+    cout << " :::: Login Usuario :::: " << endl;
+    cout << "Ingresar Usuario: ";
+    cin >> nombre;
+    cout << "Ingresar Contrasenia: ";
+    cin >> password;
+
+    if (matriz.buscarUsuario(nombre, password)) {
+        cout << "\t\n -- Inicio de Sesion Exitoso -- \n" << endl;
+        menu_user.display(nombre);
+    } else {
+        cout << "\n ** Usuario o Contrasenia incorrectos ** \n" << endl;
+    }
 }

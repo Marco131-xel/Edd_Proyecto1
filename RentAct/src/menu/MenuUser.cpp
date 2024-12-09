@@ -7,7 +7,7 @@ MenuUser::MenuUser() {
 }
 
 // Seleccionar de las opciones
-void MenuUser::display() {
+void MenuUser::display(const string& usuario) {
     int opt;
 
     do {
@@ -18,8 +18,8 @@ void MenuUser::display() {
         cout << "4. Rentar Activo" << endl;
         cout << "5. Activos Rentados" << endl;
         cout << "6. Mis Activos Rentados" << endl;
-        cout << "7. Cerrar Sesion\n" << endl;
-
+        cout << "7. Cerrar Sesion" << endl;
+        cout << "\t\t\t\t\t\t\t\tUsuario: " << usuario <<endl;
         cout << "Seleccione una Opcion: ";
         cin >> opt;
         cout << endl;
@@ -53,8 +53,3 @@ void MenuUser::display() {
     } while (opt != 7);
 
 }
-
-
-
-
-

@@ -43318,6 +43318,8 @@ using namespace std;
 
 class Login {
     public:
+        string nombre;
+        string password;
         void login_admin();
         void login_user();
 };
@@ -43359,9 +43361,58 @@ using namespace std;
 class MenuUser {
     public:
         MenuUser();
-        void display();
+        void display(const string& usuario);
 };
 # 5 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/Login.cpp" 2
+# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/../../include/Global.h" 1
+
+
+# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/../../include/MatrizDispersa.h" 1
+
+
+# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/../../include/Nodo.h" 1
+
+
+
+
+using namespace std;
+
+class Nodo {
+    public:
+        string nombreUsuario;
+        string contrasenia;
+        string nombreCompleto;
+
+
+        Nodo *next;
+        Nodo *prev;
+        Nodo *up;
+        Nodo *down;
+        Nodo *foward;
+        Nodo *backward;
+
+
+        Nodo(string nombreUsuario, string contrasenia, string nombreCompleto);
+};
+# 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/../../include/MatrizDispersa.h" 2
+
+using namespace std;
+
+class MatrizDispersa {
+    private:
+        Nodo* head;
+    public:
+        MatrizDispersa();
+        void agregarUsuario(string departamento, string empresa, string nombreUsuario,
+            string contrasenia, string nombreComp\U0000013aeto);
+        void mostrarUsuario();
+        bool buscarUsuario(string nombreUsuario, string contrasenia);
+};
+# 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/../../include/Global.h" 2
+
+
+extern MatrizDispersa matriz;
+# 6 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/Login.cpp" 2
 
 
 MenuUser menu_user;
@@ -43394,6 +43445,16 @@ void Login::login_admin() {
 
 
 void Login::login_user() {
-    cout << "\t\n%%%%% USUARIO EN PROCESO %%%%%% \n" << endl;
-    menu_user.display();
+    cout << " :::: Login Usuario :::: " << endl;
+    cout << "Ingresar Usuario: ";
+    cin >> nombre;
+    cout << "Ingresar Contrasenia: ";
+    cin >> password;
+
+    if (matriz.buscarUsuario(nombre, password)) {
+        cout << "\t\n -- Inicio de Sesion Exitoso -- \n" << endl;
+        menu_user.display(nombre);
+    } else {
+        cout << "\n ** Usuario o Contrasenia incorrectos ** \n" << endl;
+    }
 }

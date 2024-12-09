@@ -38,3 +38,17 @@ void MatrizDispersa::mostrarUsuario() {
         actual = actual->next;
     }
 }
+
+// Funcion para buscar los Usuarios de la matriz
+bool MatrizDispersa::buscarUsuario(string nombreUsuario, string contrasena) {
+    Nodo* actual = head;
+    while (actual != nullptr) {
+        // validar si existe el usuario
+        if (actual->nombreUsuario == nombreUsuario && actual->contrasenia == contrasena) {
+            return true; // Usuario encontrado
+            }
+        actual = actual->next; // Moverse entre nodos
+    }
+    return false; // Usuario no encontrado
+}
+

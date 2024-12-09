@@ -11,9 +11,7 @@ add_executable(RentAct main.cpp
         src/menu/MenuAdmin.cpp
         include/MenuAdmin.h
         "src/login/LoginAdmin.cpp"
-        "src/login/LoginUser.cpp"
         include/LoginAdmin.h
-        include/LoginUser.h
         "src/login/Inicio.cpp"
         include/Inicio.h
         src/nodos/Nodo.cpp
@@ -21,4 +19,6 @@ add_executable(RentAct main.cpp
         src/matriz/MatrizDispersa.cpp
         include/MatrizDispersa.h
         src/funciones_admin/Registrar_Usuario.cpp
-        include/Registrar_Usuario.h)
+        include/Registrar_Usuario.h
+        src/matriz/Global.cpp
+        include/Global.h)

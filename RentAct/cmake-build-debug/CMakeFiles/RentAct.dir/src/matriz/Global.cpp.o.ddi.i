@@ -1,11 +1,14 @@
-# 0 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/menu/MenuUser.cpp"
+# 0 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/matriz/Global.cpp"
 # 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/cmake-build-debug//"
 # 0 "<interno>"
 # 0 "<línea-de-órdenes>"
 # 1 "/usr/include/stdc-predef.h" 1 3 4
 # 0 "<línea-de-órdenes>" 2
-# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/menu/MenuUser.cpp"
-# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/menu/../../include/MenuUser.h" 1
+# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/matriz/Global.cpp"
+# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/matriz/../../include/MatrizDispersa.h" 1
+
+
+# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/matriz/../../include/Nodo.h" 1
 
 
 # 1 "/usr/include/c++/14.2.1/iostream" 1 3
@@ -43310,68 +43313,43 @@ namespace std __attribute__ ((__visibility__ ("default")))
 
 
 }
-# 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/menu/../../include/MenuUser.h" 2
+# 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/matriz/../../include/Nodo.h" 2
 
-# 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/menu/../../include/MenuUser.h"
+
+# 5 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/matriz/../../include/Nodo.h"
 using namespace std;
 
-class MenuUser {
+class Nodo {
     public:
-        MenuUser();
-        void display(const string& usuario);
+        string nombreUsuario;
+        string contrasenia;
+        string nombreCompleto;
+
+
+        Nodo *next;
+        Nodo *prev;
+        Nodo *up;
+        Nodo *down;
+        Nodo *foward;
+        Nodo *backward;
+
+
+        Nodo(string nombreUsuario, string contrasenia, string nombreCompleto);
 };
-# 2 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/menu/MenuUser.cpp" 2
+# 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/matriz/../../include/MatrizDispersa.h" 2
+
 using namespace std;
 
+class MatrizDispersa {
+    private:
+        Nodo* head;
+    public:
+        MatrizDispersa();
+        void agregarUsuario(string departamento, string empresa, string nombreUsuario,
+            string contrasenia, string nombreComp\U0000013aeto);
+        void mostrarUsuario();
+        bool buscarUsuario(string nombreUsuario, string contrasenia);
+};
+# 2 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/matriz/Global.cpp" 2
 
-MenuUser::MenuUser() {
-
-}
-
-
-void MenuUser::display(const string& usuario) {
-    int opt;
-
-    do {
-        cout << "\t :::: Menu de Usuario :::: " << endl;
-        cout << "1. Agregar Activo" << endl;
-        cout << "2. Eliminar Activo" << endl;
-        cout << "3. Modificar Activo" << endl;
-        cout << "4. Rentar Activo" << endl;
-        cout << "5. Activos Rentados" << endl;
-        cout << "6. Mis Activos Rentados" << endl;
-        cout << "7. Cerrar Sesion" << endl;
-        cout << "\t\t\t\t\t\t\t\tUsuario: " << usuario <<endl;
-        cout << "Seleccione una Opcion: ";
-        cin >> opt;
-        cout << endl;
-
-        switch (opt) {
-            case 1:
-                cout << "\t :::: Agregar Activo :::: " << endl;
-            break;
-            case 2:
-                cout << "\t :::: Eliminar Activo :::: " << endl;
-            break;
-            case 3:
-                cout << "\t :::: Modificar Activo :::: " << endl;
-            break;
-            case 4:
-                cout << "\t :::: Rentar Activo :::: " << endl;
-            break;
-            case 5:
-                cout << "\t :::: Activos Rentados :::: " << endl;
-            break;
-            case 6:
-                cout << "\t :::: Mis Activos Rentados :::: " << endl;
-            break;
-            case 7:
-                cout << "\t\n Cerrando Sesion ....\n " << endl;
-            break;
-            default:
-                cout << "\n ** Opcion no valida **\n " << endl;
-            break;
-        }
-    } while (opt != 7);
-
-}
+MatrizDispersa matriz;
