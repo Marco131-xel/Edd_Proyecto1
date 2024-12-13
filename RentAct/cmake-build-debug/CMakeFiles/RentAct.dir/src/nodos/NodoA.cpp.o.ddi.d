@@ -1,7 +1,7 @@
-CMakeFiles/RentAct.dir/src/funciones_admin/Registrar_Usuario.cpp.o.ddi: \
- /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_admin/Registrar_Usuario.cpp \
+CMakeFiles/RentAct.dir/src/nodos/NodoA.cpp.o.ddi: \
+ /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/nodos/NodoA.cpp \
  /usr/include/stdc-predef.h \
- /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_admin/../../include/Registrar_Usuario.h \
+ /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/nodos/../../include/NodoA.h \
  /usr/include/c++/14.2.1/iostream \
  /usr/include/c++/14.2.1/bits/requires_hosted.h \
  /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/c++config.h \
@@ -144,7 +144,4 @@ CMakeFiles/RentAct.dir/src/funciones_admin/Registrar_Usuario.cpp.o.ddi: \
  /usr/include/c++/14.2.1/bits/locale_facets.tcc \
  /usr/include/c++/14.2.1/bits/basic_ios.tcc \
  /usr/include/c++/14.2.1/bits/ostream.tcc /usr/include/c++/14.2.1/istream \
- /usr/include/c++/14.2.1/bits/istream.tcc \
- /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_admin/../../include/Global.h \
- /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_admin/../../include/MatrizDispersa.h \
- /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_admin/../../include/NodoM.h
+ /usr/include/c++/14.2.1/bits/istream.tcc

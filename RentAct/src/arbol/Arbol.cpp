@@ -5,9 +5,9 @@ void Arbol::insertar(int dato) {
     insertarNodo(raiz, dato, nullptr);
 }
 
-void Arbol::insertarNodo(Nodo *&arbol, int n, Nodo *branch) {
+void Arbol::insertarNodo(NodoA *&arbol, int n, NodoA *branch) {
     if (arbol == nullptr) {
-        arbol = new Nodo(n, branch);
+        arbol = new NodoA(n, branch);
     } else {
         if (n < arbol->dato) {
             insertarNodo(arbol->izq, n, arbol);
@@ -25,7 +25,7 @@ void Arbol::mostrar() const {
     mostrarArbol(raiz, 0);
 }
 
-void Arbol::mostrarArbol(Nodo *arbol, int cont) const {
+void Arbol::mostrarArbol(NodoA *arbol, int cont) const {
     if (arbol == nullptr) {
         return;
     }
@@ -42,7 +42,7 @@ bool Arbol::buscar(int dato) const {
     return buscarArbol(raiz, dato);
 }
 
-bool Arbol::buscarArbol(Nodo *arbol, int n) const {
+bool Arbol::buscarArbol(NodoA *arbol, int n) const {
     if (arbol == nullptr) {
         return false;
     }
@@ -61,7 +61,7 @@ void Arbol::recorrerInOrden() const {
     cout << "\n";
 }
 
-void Arbol::inOrden(Nodo *arbol) const {
+void Arbol::inOrden(NodoA *arbol) const {
     if (arbol == nullptr) {
         return;
     }
@@ -72,12 +72,12 @@ void Arbol::inOrden(Nodo *arbol) const {
 
 
 // funcion para obtener altura del arbol
-int Arbol::obtenerAltura(Nodo *nodo) const {
+int Arbol::obtenerAltura(NodoA *nodo) const {
     return nodo ? nodo->altura : 0;
 }
 
 // Actualizar la altura del arbol
-void Arbol::actualizarAltura(Nodo *nodo) {
+void Arbol::actualizarAltura(NodoA *nodo) {
     if (nodo) {
         int alturaIzq = obtenerAltura(nodo->izq);
         int alturaDer = obtenerAltura(nodo->der);
@@ -86,12 +86,12 @@ void Arbol::actualizarAltura(Nodo *nodo) {
 }
 
 // balancear el arbol
-int Arbol::obtenerFactorBalance(Nodo *nodo) const {
+int Arbol::obtenerFactorBalance(NodoA *nodo) const {
     return nodo ? obtenerAltura(nodo->izq) - obtenerAltura(nodo->der) : 0;
 }
 
 // funcion para balancear
-void Arbol::balancear(Nodo *&arbol, Nodo *branch) {
+void Arbol::balancear(NodoA *&arbol, NodoA *branch) {
     int fb = obtenerFactorBalance(arbol);
     if (fb > 1) {
         if (obtenerFactorBalance(arbol->izq) < 0) {
@@ -107,8 +107,8 @@ void Arbol::balancear(Nodo *&arbol, Nodo *branch) {
 }
 
 // funcion para rotar hacia la izquierda
-void Arbol::rotacionIzq(Nodo *&nodo) {
-    Nodo *aux = nodo->der;
+void Arbol::rotacionIzq(NodoA *&nodo) {
+    NodoA *aux = nodo->der;
     nodo->der = aux->izq;
     aux->izq = nodo;
     nodo = aux;
@@ -117,8 +117,8 @@ void Arbol::rotacionIzq(Nodo *&nodo) {
 }
 
 // funcion para rotar hacia la derecha
-void Arbol::rotacionDer(Nodo *&nodo) {
-    Nodo *aux = nodo->izq;
+void Arbol::rotacionDer(NodoA *&nodo) {
+    NodoA *aux = nodo->izq;
     nodo->izq = aux->der;
     aux->der = nodo;
     nodo = aux;

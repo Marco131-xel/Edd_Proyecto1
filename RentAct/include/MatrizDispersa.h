@@ -1,13 +1,13 @@
 #ifndef MATRIZDISPERSA_H
 #define MATRIZDISPERSA_H
-#include "Nodo.h"
+#include "NodoM.h"
 
 using namespace std;
 
 class MatrizDispersa {
     private:
-        Nodo* cabH;
-        Nodo* cabV;
+        NodoM* cabH;
+        NodoM* cabV;
 
     public:
         MatrizDispersa();
@@ -15,11 +15,11 @@ class MatrizDispersa {
             string contrasenia, string nombreCompĺeto);
         void mostrarUsuario();
         bool buscarUsuario(string nombreUsuario, string contrasenia);
-        Nodo* insertarCabeceraH(string departamento);
-        Nodo* insertarCabeceraV(string empresa);
-        Nodo* cabeceraHorizontal(string departamento);
-        Nodo* cabeceraVertical(string empresa);
-        Nodo* enCabeceraV(Nodo* nodo);
+        NodoM* insertarCabeceraH(string departamento);
+        NodoM* insertarCabeceraV(string empresa);
+        NodoM* cabeceraHorizontal(string departamento);
+        NodoM* cabeceraVertical(string empresa);
+        NodoM* enCabeceraV(NodoM* nodo);
         // Pruebas
         void mostrarCabeceras();
 };

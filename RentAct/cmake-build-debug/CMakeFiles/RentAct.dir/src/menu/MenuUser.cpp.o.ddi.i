@@ -43321,8 +43321,27 @@ class MenuUser {
         void display(const string& usuario);
 };
 # 2 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/menu/MenuUser.cpp" 2
+# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/menu/../../include/Agregar_Activo.h" 1
+
+
+
+
 using namespace std;
 
+class Agregar_Activo {
+    public:
+    string nombre_activo;
+    string descripcion;
+    const string id;
+
+    Agregar_Activo();
+    void agregar_activo();
+    void mostrar_activo();
+};
+# 3 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/menu/MenuUser.cpp" 2
+using namespace std;
+
+Agregar_Activo agregar;
 
 MenuUser::MenuUser() {
 
@@ -43349,6 +43368,7 @@ void MenuUser::display(const string& usuario) {
         switch (opt) {
             case 1:
                 cout << "\t :::: Agregar Activo :::: " << endl;
+                agregar.agregar_activo();
             break;
             case 2:
                 cout << "\t :::: Eliminar Activo :::: " << endl;

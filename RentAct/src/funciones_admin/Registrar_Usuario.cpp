@@ -8,7 +8,7 @@ Registrar_Usuario::Registrar_Usuario() {
 
 // Funcion para registrar los Usuarios
 void Registrar_Usuario::registrar() {
-    cout << "Ingresar Nombre del Usuario: ";
+    cout << "Ingresar Usuario: ";
     cin >> nombre;
     cout << "Ingrese la Contrasenia: ";
     cin >> password;

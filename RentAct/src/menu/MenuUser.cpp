@@ -1,6 +1,8 @@
 #include "../../include/MenuUser.h"
+#include "../../include/Agregar_Activo.h"
 using namespace std;
 
+Agregar_Activo agregar;
 // Constructor Vacio
 MenuUser::MenuUser() {
 
@@ -27,6 +29,7 @@ void MenuUser::display(const string& usuario) {
         switch (opt) {
             case 1:
                 cout << "\t :::: Agregar Activo :::: " << endl;
+                agregar.agregar_activo();
             break;
             case 2:
                 cout << "\t :::: Eliminar Activo :::: " << endl;

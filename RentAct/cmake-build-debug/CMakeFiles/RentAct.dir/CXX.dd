@@ -11,8 +11,6 @@ build CMakeFiles/RentAct.dir/src/login/LoginAdmin.cpp.o: dyndep
 
 build CMakeFiles/RentAct.dir/src/login/Inicio.cpp.o: dyndep
 
-build CMakeFiles/RentAct.dir/src/nodos/Nodo.cpp.o: dyndep
-
 build CMakeFiles/RentAct.dir/src/matriz/MatrizDispersa.cpp.o: dyndep
 
 build CMakeFiles/RentAct.dir/src/funciones_admin/Registrar_Usuario.cpp.o: dyndep
@@ -20,4 +18,10 @@ build CMakeFiles/RentAct.dir/src/funciones_admin/Registrar_Usuario.cpp.o: dyndep
 build CMakeFiles/RentAct.dir/src/matriz/Global.cpp.o: dyndep
 
 build CMakeFiles/RentAct.dir/src/arbol/Arbol.cpp.o: dyndep
+
+build CMakeFiles/RentAct.dir/src/funciones_user/Agregar_Activo.cpp.o: dyndep
+
+build CMakeFiles/RentAct.dir/src/nodos/NodoM.cpp.o: dyndep
+
+build CMakeFiles/RentAct.dir/src/nodos/NodoA.cpp.o: dyndep
 

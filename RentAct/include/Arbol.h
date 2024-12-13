@@ -1,24 +1,24 @@
 #ifndef ARBOL_H
 #define ARBOL_H
-#include "Nodo.h"
+#include "NodoA.h"
 #include <iostream>
 
 class Arbol {
     private:
-        Nodo* raiz;
+        NodoA* raiz;
         // Metodos del auxiliares
-        void insertarNodo(Nodo *&, int, Nodo*);
-        void mostrarArbol(Nodo *, int) const;
-        bool buscarArbol(Nodo *, int) const;
-        void preOrden(Nodo *) const;
-        void inOrden(Nodo *) const;
-        void postOrden(Nodo *) const;
-        int obtenerAltura(Nodo *) const;
-        int obtenerFactorBalance(Nodo *) const;
-        void actualizarAltura(Nodo *);
-        void balancear(Nodo *&, Nodo *);
-        void rotacionIzq(Nodo *&);
-        void rotacionDer(Nodo *&);
+        void insertarNodo(NodoA *&, int, NodoA*);
+        void mostrarArbol(NodoA *, int) const;
+        bool buscarArbol(NodoA *, int) const;
+        void preOrden(NodoA *) const;
+        void inOrden(NodoA *) const;
+        void postOrden(NodoA *) const;
+        int obtenerAltura(NodoA *) const;
+        int obtenerFactorBalance(NodoA *) const;
+        void actualizarAltura(NodoA *);
+        void balancear(NodoA *&, NodoA *);
+        void rotacionIzq(NodoA *&);
+        void rotacionDer(NodoA *&);
 
     public:
         Arbol() : raiz(nullptr) {}

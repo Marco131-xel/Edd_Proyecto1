@@ -150,4 +150,4 @@ CMakeFiles/RentAct.dir/src/login/Login.cpp.o.ddi: \
  /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/../../include/MenuUser.h \
  /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/../../include/Global.h \
  /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/../../include/MatrizDispersa.h \
- /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/../../include/Nodo.h
+ /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/../../include/NodoM.h

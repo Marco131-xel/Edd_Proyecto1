@@ -8,7 +8,8 @@
 # 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/matriz/../../include/MatrizDispersa.h" 1
 
 
-# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/matriz/../../include/Nodo.h" 1
+# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/matriz/../../include/NodoM.h" 1
+
 
 
 # 1 "/usr/include/c++/14.2.1/iostream" 1 3
@@ -43313,37 +43314,28 @@ namespace std __attribute__ ((__visibility__ ("default")))
 
 
 }
-# 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/matriz/../../include/Nodo.h" 2
+# 5 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/matriz/../../include/NodoM.h" 2
 
 
-# 5 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/matriz/../../include/Nodo.h"
+# 6 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/matriz/../../include/NodoM.h"
 using namespace std;
 
-class Nodo {
-    public:
-        string nombreUsuario;
-        string contrasenia;
-        string nombreCompleto;
+class NodoM {
+public:
+    string nombreUsuario;
+    string contrasenia;
+    string nombreCompleto;
 
 
-        Nodo *next;
-        Nodo *prev;
-        Nodo *up;
-        Nodo *down;
-        Nodo *foward;
-        Nodo *backward;
+    NodoM *next;
+    NodoM *prev;
+    NodoM *up;
+    NodoM *down;
+    NodoM *foward;
+    NodoM *backward;
 
 
-        int dato;
-        Nodo *izq;
-        Nodo *der;
-        Nodo *branch;
-        int altura;
-
-
-        Nodo(string nombreUsuario, string contrasenia, string nombreCompleto);
-
-        Nodo(int valor, Nodo *branch);
+    NodoM(string nombreUsuario, string contrasenia, string nombreCompleto);
 };
 # 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/matriz/../../include/MatrizDispersa.h" 2
 
@@ -43351,8 +43343,8 @@ using namespace std;
 
 class MatrizDispersa {
     private:
-        Nodo* cabH;
-        Nodo* cabV;
+        NodoM* cabH;
+        NodoM* cabV;
 
     public:
         MatrizDispersa();
@@ -43360,11 +43352,11 @@ class MatrizDispersa {
             string contrasenia, string nombreComp\U0000013aeto);
         void mostrarUsuario();
         bool buscarUsuario(string nombreUsuario, string contrasenia);
-        Nodo* insertarCabeceraH(string departamento);
-        Nodo* insertarCabeceraV(string empresa);
-        Nodo* cabeceraHorizontal(string departamento);
-        Nodo* cabeceraVertical(string empresa);
-        Nodo* enCabeceraV(Nodo* nodo);
+        NodoM* insertarCabeceraH(string departamento);
+        NodoM* insertarCabeceraV(string empresa);
+        NodoM* cabeceraHorizontal(string departamento);
+        NodoM* cabeceraVertical(string empresa);
+        NodoM* enCabeceraV(NodoM* nodo);
 
         void mostrarCabeceras();
 };

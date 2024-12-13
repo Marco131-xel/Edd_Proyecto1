@@ -8,7 +8,8 @@
 # 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/matriz/../../include/MatrizDispersa.h" 1
 
 
-# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/matriz/../../include/Nodo.h" 1
+# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/matriz/../../include/NodoM.h" 1
+
 
 
 # 1 "/usr/include/c++/14.2.1/iostream" 1 3
@@ -43313,37 +43314,28 @@ namespace std __attribute__ ((__visibility__ ("default")))
 
 
 }
-# 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/matriz/../../include/Nodo.h" 2
+# 5 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/matriz/../../include/NodoM.h" 2
 
 
-# 5 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/matriz/../../include/Nodo.h"
+# 6 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/matriz/../../include/NodoM.h"
 using namespace std;
 
-class Nodo {
-    public:
-        string nombreUsuario;
-        string contrasenia;
-        string nombreCompleto;
+class NodoM {
+public:
+    string nombreUsuario;
+    string contrasenia;
+    string nombreCompleto;
 
 
-        Nodo *next;
-        Nodo *prev;
-        Nodo *up;
-        Nodo *down;
-        Nodo *foward;
-        Nodo *backward;
+    NodoM *next;
+    NodoM *prev;
+    NodoM *up;
+    NodoM *down;
+    NodoM *foward;
+    NodoM *backward;
 
 
-        int dato;
-        Nodo *izq;
-        Nodo *der;
-        Nodo *branch;
-        int altura;
-
-
-        Nodo(string nombreUsuario, string contrasenia, string nombreCompleto);
-
-        Nodo(int valor, Nodo *branch);
+    NodoM(string nombreUsuario, string contrasenia, string nombreCompleto);
 };
 # 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/matriz/../../include/MatrizDispersa.h" 2
 
@@ -43351,8 +43343,8 @@ using namespace std;
 
 class MatrizDispersa {
     private:
-        Nodo* cabH;
-        Nodo* cabV;
+        NodoM* cabH;
+        NodoM* cabV;
 
     public:
         MatrizDispersa();
@@ -43360,11 +43352,11 @@ class MatrizDispersa {
             string contrasenia, string nombreComp\U0000013aeto);
         void mostrarUsuario();
         bool buscarUsuario(string nombreUsuario, string contrasenia);
-        Nodo* insertarCabeceraH(string departamento);
-        Nodo* insertarCabeceraV(string empresa);
-        Nodo* cabeceraHorizontal(string departamento);
-        Nodo* cabeceraVertical(string empresa);
-        Nodo* enCabeceraV(Nodo* nodo);
+        NodoM* insertarCabeceraH(string departamento);
+        NodoM* insertarCabeceraV(string empresa);
+        NodoM* cabeceraHorizontal(string departamento);
+        NodoM* cabeceraVertical(string empresa);
+        NodoM* enCabeceraV(NodoM* nodo);
 
         void mostrarCabeceras();
 };
@@ -43376,7 +43368,6 @@ using namespace std;
 
 
 MatrizDispersa::MatrizDispersa() {
-
     cabH = nullptr;
     cabV = nullptr;
 }
@@ -43385,22 +43376,22 @@ void MatrizDispersa::agregarUsuario(string departamento, string empresa, string 
     string contrasenia, string nombreCompleto) {
 
 
-    Nodo* nuevoUsuario = new Nodo(nombreUsuario, contrasenia, nombreCompleto);
+    NodoM* nuevoUsuario = new NodoM(nombreUsuario, contrasenia, nombreCompleto);
 
 
-    Nodo* cabH = cabeceraHorizontal(departamento);
+    NodoM* cabH = cabeceraHorizontal(departamento);
     if (cabH == nullptr) {
         cabH = insertarCabeceraH(departamento);
     }
 
 
-    Nodo* cabV = cabeceraVertical(empresa);
+    NodoM* cabV = cabeceraVertical(empresa);
     if (cabV == nullptr) {
         cabV = insertarCabeceraV(empresa);
     }
 
 
-    Nodo* auxH = cabH;
+    NodoM* auxH = cabH;
     while (auxH->down != nullptr && auxH->down->nombreUsuario < nombreUsuario) {
         auxH = auxH->down;
     }
@@ -43413,7 +43404,7 @@ void MatrizDispersa::agregarUsuario(string departamento, string empresa, string 
     nuevoUsuario->up = auxH;
 
 
-    Nodo* auxV = cabV;
+    NodoM* auxV = cabV;
     while (auxV->next != nullptr && auxV->next->nombreUsuario < nombreUsuario) {
         auxV = auxV->next;
     }
@@ -43427,15 +43418,13 @@ void MatrizDispersa::agregarUsuario(string departamento, string empresa, string 
 }
 
 void MatrizDispersa::mostrarUsuario() {
-    Nodo* auxH = cabH;
+    NodoM* auxH = cabH;
 
     while (auxH != nullptr) {
         cout << "Departamento: " << auxH->nombreUsuario << endl;
 
-        Nodo* aux = auxH->down;
+        NodoM* aux = auxH->down;
         while (aux != nullptr) {
-
-            Nodo* auxV = cabV;
             cout << "  Usuario: " << aux->nombreUsuario
                  << ", Empresa: " << enCabeceraV(aux)->nombreUsuario
                  << ", Nombre Completo: " << aux->nombreCompleto << endl;
@@ -43449,10 +43438,10 @@ void MatrizDispersa::mostrarUsuario() {
 
 bool MatrizDispersa::buscarUsuario(string nombreUsuario, string contrasenia) {
 
-    Nodo* actualH = cabH;
+    NodoM* actualH = cabH;
     while (actualH != nullptr) {
 
-        Nodo* actual = actualH->down;
+        NodoM* actual = actualH->down;
         while (actual != nullptr) {
             if (actual->nombreUsuario == nombreUsuario && actual->contrasenia == contrasenia) {
                 return true;
@@ -43464,15 +43453,16 @@ bool MatrizDispersa::buscarUsuario(string nombreUsuario, string contrasenia) {
     return false;
 }
 
-Nodo* MatrizDispersa::insertarCabeceraH(string departamento) {
-    Nodo* nuevaCab = new Nodo(departamento, "", "");
+
+NodoM* MatrizDispersa::insertarCabeceraH(string departamento) {
+    NodoM* nuevaCab = new NodoM(departamento, "", "");
 
     if (cabH == nullptr) {
         cabH = nuevaCab;
         return nuevaCab;
     }
 
-    Nodo* aux = cabH;
+    NodoM* aux = cabH;
     while (aux->next != nullptr) {
         aux = aux->next;
     }
@@ -43482,15 +43472,16 @@ Nodo* MatrizDispersa::insertarCabeceraH(string departamento) {
     return nuevaCab;
 }
 
-Nodo* MatrizDispersa::insertarCabeceraV(string empresa) {
-    Nodo* nuevaCab = new Nodo(empresa, "", "");
+
+NodoM* MatrizDispersa::insertarCabeceraV(string empresa) {
+    NodoM* nuevaCab = new NodoM(empresa, "", "");
 
     if (cabV == nullptr) {
         cabV = nuevaCab;
         return nuevaCab;
     }
 
-    Nodo* aux = cabV;
+    NodoM* aux = cabV;
     while (aux->down != nullptr) {
         aux = aux->down;
     }
@@ -43500,8 +43491,8 @@ Nodo* MatrizDispersa::insertarCabeceraV(string empresa) {
     return nuevaCab;
 }
 
-Nodo* MatrizDispersa::cabeceraHorizontal(string departamento) {
-    Nodo* aux = cabH;
+NodoM* MatrizDispersa::cabeceraHorizontal(string departamento) {
+    NodoM* aux = cabH;
     while (aux != nullptr) {
         if (aux->nombreUsuario == departamento) {
             return aux;
@@ -43511,8 +43502,8 @@ Nodo* MatrizDispersa::cabeceraHorizontal(string departamento) {
     return nullptr;
 }
 
-Nodo* MatrizDispersa::cabeceraVertical(string empresa) {
-    Nodo* aux = cabV;
+NodoM* MatrizDispersa::cabeceraVertical(string empresa) {
+    NodoM* aux = cabV;
     while (aux != nullptr) {
         if (aux->nombreUsuario == empresa) {
             return aux;
@@ -43522,18 +43513,18 @@ Nodo* MatrizDispersa::cabeceraVertical(string empresa) {
     return nullptr;
 }
 
-Nodo* MatrizDispersa::enCabeceraV(Nodo* nodo) {
-    Nodo* aux = nodo;
-
+NodoM* MatrizDispersa::enCabeceraV(NodoM* nodo) {
+    NodoM* aux = nodo;
     while (aux->up != nullptr) {
         aux = aux->up;
     }
     return aux;
 }
 
+
 void MatrizDispersa::mostrarCabeceras() {
     cout << "Cabeceras horizontales:" << endl;
-    Nodo* auxH = cabH;
+    NodoM* auxH = cabH;
     while (auxH != nullptr) {
         cout << auxH->nombreUsuario << " -> ";
         auxH = auxH->next;
@@ -43541,7 +43532,7 @@ void MatrizDispersa::mostrarCabeceras() {
     cout << "NULL" << endl;
 
     cout << "Cabeceras verticales:" << endl;
-    Nodo* auxV = cabV;
+    NodoM* auxV = cabV;
     while (auxV != nullptr) {
         cout << auxV->nombreUsuario << " -> ";
         auxV = auxV->down;
