@@ -18,7 +18,16 @@ class Nodo {
         Nodo *foward; // Nodo opcional (atajo)
         Nodo *backward; // Nodo opcional (atajo
 
-        // Constructor
+        // Punteros para el Arbol
+        int dato;
+        Nodo *izq;
+        Nodo *der;
+        Nodo *branch;
+        int altura;
+
+        // Constructor para mi Matriz
         Nodo(string nombreUsuario, string contrasenia, string nombreCompleto);
+        // Constructor para mi Arbol
+        Nodo(int valor, Nodo *branch);
 };
 #endif //NODO_H

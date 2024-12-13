@@ -43334,7 +43334,16 @@ class Nodo {
         Nodo *backward;
 
 
+        int dato;
+        Nodo *izq;
+        Nodo *der;
+        Nodo *branch;
+        int altura;
+
+
         Nodo(string nombreUsuario, string contrasenia, string nombreCompleto);
+
+        Nodo(int valor, Nodo *branch);
 };
 # 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/matriz/../../include/MatrizDispersa.h" 2
 
@@ -43342,13 +43351,22 @@ using namespace std;
 
 class MatrizDispersa {
     private:
-        Nodo* head;
+        Nodo* cabH;
+        Nodo* cabV;
+
     public:
         MatrizDispersa();
         void agregarUsuario(string departamento, string empresa, string nombreUsuario,
             string contrasenia, string nombreComp\U0000013aeto);
         void mostrarUsuario();
         bool buscarUsuario(string nombreUsuario, string contrasenia);
+        Nodo* insertarCabeceraH(string departamento);
+        Nodo* insertarCabeceraV(string empresa);
+        Nodo* cabeceraHorizontal(string departamento);
+        Nodo* cabeceraVertical(string empresa);
+        Nodo* enCabeceraV(Nodo* nodo);
+
+        void mostrarCabeceras();
 };
 # 2 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/matriz/MatrizDispersa.cpp" 2
 
@@ -43359,48 +43377,174 @@ using namespace std;
 
 MatrizDispersa::MatrizDispersa() {
 
-    head = nullptr;
+    cabH = nullptr;
+    cabV = nullptr;
 }
-
 
 void MatrizDispersa::agregarUsuario(string departamento, string empresa, string nombreUsuario,
-    string contrasenia, string nombreComp\U0000013aeto) {
+    string contrasenia, string nombreCompleto) {
 
 
-    Nodo* nuevoUsuario = new Nodo(nombreUsuario, contrasenia, nombreComp\U0000013aeto);
+    Nodo* nuevoUsuario = new Nodo(nombreUsuario, contrasenia, nombreCompleto);
 
 
-    if (head == nullptr) {
-        head = nuevoUsuario;
-        return;
+    Nodo* cabH = cabeceraHorizontal(departamento);
+    if (cabH == nullptr) {
+        cabH = insertarCabeceraH(departamento);
     }
 
 
-    nuevoUsuario->next = head;
-    head = nuevoUsuario;
-}
+    Nodo* cabV = cabeceraVertical(empresa);
+    if (cabV == nullptr) {
+        cabV = insertarCabeceraV(empresa);
+    }
 
+
+    Nodo* auxH = cabH;
+    while (auxH->down != nullptr && auxH->down->nombreUsuario < nombreUsuario) {
+        auxH = auxH->down;
+    }
+
+    nuevoUsuario->down = auxH->down;
+    if (auxH->down != nullptr) {
+        auxH->down->up = nuevoUsuario;
+    }
+    auxH->down = nuevoUsuario;
+    nuevoUsuario->up = auxH;
+
+
+    Nodo* auxV = cabV;
+    while (auxV->next != nullptr && auxV->next->nombreUsuario < nombreUsuario) {
+        auxV = auxV->next;
+    }
+
+    nuevoUsuario->next = auxV->next;
+    if (auxV->next != nullptr) {
+        auxV->next->prev = nuevoUsuario;
+    }
+    auxV->next = nuevoUsuario;
+    nuevoUsuario->prev = auxV;
+}
 
 void MatrizDispersa::mostrarUsuario() {
-    Nodo* actual = head;
-    while (actual != nullptr) {
-        cout << "Usuario: " << actual->nombreUsuario<< endl;
-        cout << "Nombre Completo: " << actual->nombreCompleto << endl;
-        cout << "Contrasenia: " << actual->contrasenia << endl;
-        actual = actual->next;
+    Nodo* auxH = cabH;
+
+    while (auxH != nullptr) {
+        cout << "Departamento: " << auxH->nombreUsuario << endl;
+
+        Nodo* aux = auxH->down;
+        while (aux != nullptr) {
+
+            Nodo* auxV = cabV;
+            cout << "  Usuario: " << aux->nombreUsuario
+                 << ", Empresa: " << enCabeceraV(aux)->nombreUsuario
+                 << ", Nombre Completo: " << aux->nombreCompleto << endl;
+            aux = aux->down;
+        }
+
+        auxH = auxH->next;
     }
 }
 
 
-bool MatrizDispersa::buscarUsuario(string nombreUsuario, string contrasena) {
-    Nodo* actual = head;
-    while (actual != nullptr) {
+bool MatrizDispersa::buscarUsuario(string nombreUsuario, string contrasenia) {
 
-        if (actual->nombreUsuario == nombreUsuario &&
-            actual->contrasenia == contrasena) {
-            return true;
+    Nodo* actualH = cabH;
+    while (actualH != nullptr) {
+
+        Nodo* actual = actualH->down;
+        while (actual != nullptr) {
+            if (actual->nombreUsuario == nombreUsuario && actual->contrasenia == contrasenia) {
+                return true;
             }
-        actual = actual->next;
+            actual = actual->down;
+        }
+        actualH = actualH->next;
     }
     return false;
+}
+
+Nodo* MatrizDispersa::insertarCabeceraH(string departamento) {
+    Nodo* nuevaCab = new Nodo(departamento, "", "");
+
+    if (cabH == nullptr) {
+        cabH = nuevaCab;
+        return nuevaCab;
+    }
+
+    Nodo* aux = cabH;
+    while (aux->next != nullptr) {
+        aux = aux->next;
+    }
+
+    aux->next = nuevaCab;
+    nuevaCab->prev = aux;
+    return nuevaCab;
+}
+
+Nodo* MatrizDispersa::insertarCabeceraV(string empresa) {
+    Nodo* nuevaCab = new Nodo(empresa, "", "");
+
+    if (cabV == nullptr) {
+        cabV = nuevaCab;
+        return nuevaCab;
+    }
+
+    Nodo* aux = cabV;
+    while (aux->down != nullptr) {
+        aux = aux->down;
+    }
+
+    aux->down = nuevaCab;
+    nuevaCab->up = aux;
+    return nuevaCab;
+}
+
+Nodo* MatrizDispersa::cabeceraHorizontal(string departamento) {
+    Nodo* aux = cabH;
+    while (aux != nullptr) {
+        if (aux->nombreUsuario == departamento) {
+            return aux;
+        }
+        aux = aux->next;
+    }
+    return nullptr;
+}
+
+Nodo* MatrizDispersa::cabeceraVertical(string empresa) {
+    Nodo* aux = cabV;
+    while (aux != nullptr) {
+        if (aux->nombreUsuario == empresa) {
+            return aux;
+        }
+        aux = aux->down;
+    }
+    return nullptr;
+}
+
+Nodo* MatrizDispersa::enCabeceraV(Nodo* nodo) {
+    Nodo* aux = nodo;
+
+    while (aux->up != nullptr) {
+        aux = aux->up;
+    }
+    return aux;
+}
+
+void MatrizDispersa::mostrarCabeceras() {
+    cout << "Cabeceras horizontales:" << endl;
+    Nodo* auxH = cabH;
+    while (auxH != nullptr) {
+        cout << auxH->nombreUsuario << " -> ";
+        auxH = auxH->next;
+    }
+    cout << "NULL" << endl;
+
+    cout << "Cabeceras verticales:" << endl;
+    Nodo* auxV = cabV;
+    while (auxV != nullptr) {
+        cout << auxV->nombreUsuario << " -> ";
+        auxV = auxV->down;
+    }
+    cout << "NULL" << endl;
 }

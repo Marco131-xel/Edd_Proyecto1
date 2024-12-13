@@ -21,4 +21,6 @@ add_executable(RentAct main.cpp
         src/funciones_admin/Registrar_Usuario.cpp
         include/Registrar_Usuario.h
         src/matriz/Global.cpp
-        include/Global.h)
+        include/Global.h
+        src/arbol/Arbol.cpp
+        include/Arbol.h)

@@ -43331,7 +43331,16 @@ class Nodo {
         Nodo *backward;
 
 
+        int dato;
+        Nodo *izq;
+        Nodo *der;
+        Nodo *branch;
+        int altura;
+
+
         Nodo(string nombreUsuario, string contrasenia, string nombreCompleto);
+
+        Nodo(int valor, Nodo *branch);
 };
 # 2 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/nodos/Nodo.cpp" 2
 
@@ -43344,3 +43353,7 @@ Nodo::Nodo(string nombreUsuario, string contrasenia, string nombreCompleto)
     down(nullptr),
     foward(nullptr),
     backward(nullptr){}
+
+
+Nodo::Nodo(int valor, Nodo *branch = nullptr)
+    : dato(valor), izq(nullptr), der(nullptr), altura(1){}

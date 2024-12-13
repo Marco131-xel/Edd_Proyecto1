@@ -19,3 +19,5 @@ build CMakeFiles/RentAct.dir/src/funciones_admin/Registrar_Usuario.cpp.o: dyndep
 
 build CMakeFiles/RentAct.dir/src/matriz/Global.cpp.o: dyndep
 
+build CMakeFiles/RentAct.dir/src/arbol/Arbol.cpp.o: dyndep
+

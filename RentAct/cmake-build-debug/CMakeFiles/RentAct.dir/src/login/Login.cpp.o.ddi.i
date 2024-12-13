@@ -43392,7 +43392,16 @@ class Nodo {
         Nodo *backward;
 
 
+        int dato;
+        Nodo *izq;
+        Nodo *der;
+        Nodo *branch;
+        int altura;
+
+
         Nodo(string nombreUsuario, string contrasenia, string nombreCompleto);
+
+        Nodo(int valor, Nodo *branch);
 };
 # 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/../../include/MatrizDispersa.h" 2
 
@@ -43400,13 +43409,22 @@ using namespace std;
 
 class MatrizDispersa {
     private:
-        Nodo* head;
+        Nodo* cabH;
+        Nodo* cabV;
+
     public:
         MatrizDispersa();
         void agregarUsuario(string departamento, string empresa, string nombreUsuario,
             string contrasenia, string nombreComp\U0000013aeto);
         void mostrarUsuario();
         bool buscarUsuario(string nombreUsuario, string contrasenia);
+        Nodo* insertarCabeceraH(string departamento);
+        Nodo* insertarCabeceraV(string empresa);
+        Nodo* cabeceraHorizontal(string departamento);
+        Nodo* cabeceraVertical(string empresa);
+        Nodo* enCabeceraV(Nodo* nodo);
+
+        void mostrarCabeceras();
 };
 # 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/../../include/Global.h" 2
 

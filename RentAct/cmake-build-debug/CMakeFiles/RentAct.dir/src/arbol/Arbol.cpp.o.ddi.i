@@ -1,11 +1,14 @@
-# 0 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login /LoginAdmin.cpp"
+# 0 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/arbol/Arbol.cpp"
 # 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/cmake-build-debug//"
 # 0 "<interno>"
 # 0 "<línea-de-órdenes>"
 # 1 "/usr/include/stdc-predef.h" 1 3 4
 # 0 "<línea-de-órdenes>" 2
-# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login /LoginAdmin.cpp"
-# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login /../../include/LoginAdmin.h" 1
+# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/arbol/Arbol.cpp"
+# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/arbol/../../include/Arbol.h" 1
+
+
+# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/arbol/../../include/Nodo.h" 1
 
 
 # 1 "/usr/include/c++/14.2.1/iostream" 1 3
@@ -43310,27 +43313,191 @@ namespace std __attribute__ ((__visibility__ ("default")))
 
 
 }
-# 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login /../../include/LoginAdmin.h" 2
+# 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/arbol/../../include/Nodo.h" 2
 
 
-# 5 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login /../../include/LoginAdmin.h"
+# 5 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/arbol/../../include/Nodo.h"
 using namespace std;
 
-class LoginAdmin {
+class Nodo {
     public:
-        LoginAdmin(const string &user, const string &password);
-        bool authenticate(const string& inputUser, const string& inputPassword) const;
-    private:
-        string adminUser;
-        string adminPassword;
+        string nombreUsuario;
+        string contrasenia;
+        string nombreCompleto;
+
+
+        Nodo *next;
+        Nodo *prev;
+        Nodo *up;
+        Nodo *down;
+        Nodo *foward;
+        Nodo *backward;
+
+
+        int dato;
+        Nodo *izq;
+        Nodo *der;
+        Nodo *branch;
+        int altura;
+
+
+        Nodo(string nombreUsuario, string contrasenia, string nombreCompleto);
+
+        Nodo(int valor, Nodo *branch);
 };
-# 2 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login /LoginAdmin.cpp" 2
+# 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/arbol/../../include/Arbol.h" 2
 
 
-LoginAdmin::LoginAdmin(const string &user, const string &password)
-    : adminUser(user), adminPassword(password){}
+class Arbol {
+    private:
+        Nodo* raiz;
+
+        void insertarNodo(Nodo *&, int, Nodo*);
+        void mostrarArbol(Nodo *, int) const;
+        bool buscarArbol(Nodo *, int) const;
+        void preOrden(Nodo *) const;
+        void inOrden(Nodo *) const;
+        void postOrden(Nodo *) const;
+        int obtenerAltura(Nodo *) const;
+        int obtenerFactorBalance(Nodo *) const;
+        void actualizarAltura(Nodo *);
+        void balancear(Nodo *&, Nodo *);
+        void rotacionIzq(Nodo *&);
+        void rotacionDer(Nodo *&);
+
+    public:
+        Arbol() : raiz(nullptr) {}
+        void insertar(int dato);
+        void mostrar() const;
+        bool buscar(int dato) const;
+        void recorrerPreOrden() const;
+        void recorrerInOrden() const;
+        void recorrerPostOrden() const;
+};
+# 2 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/arbol/Arbol.cpp" 2
 
 
-bool LoginAdmin::authenticate(const string &inputUser, const string &inputPassword) const {
-    return (inputUser == adminUser && inputPassword == adminPassword);
+void Arbol::insertar(int dato) {
+    insertarNodo(raiz, dato, nullptr);
+}
+
+void Arbol::insertarNodo(Nodo *&arbol, int n, Nodo *branch) {
+    if (arbol == nullptr) {
+        arbol = new Nodo(n, branch);
+    } else {
+        if (n < arbol->dato) {
+            insertarNodo(arbol->izq, n, arbol);
+        } else {
+            insertarNodo(arbol->der, n, arbol);
+        }
+    }
+
+    actualizarAltura(arbol);
+    balancear(arbol, branch);
+}
+
+
+void Arbol::mostrar() const {
+    mostrarArbol(raiz, 0);
+}
+
+void Arbol::mostrarArbol(Nodo *arbol, int cont) const {
+    if (arbol == nullptr) {
+        return;
+    }
+    mostrarArbol(arbol->der, cont+1);
+    for (int i = 0; i < cont; i++) {
+        cout << "   ";
+    }
+    cout << arbol->dato << "\n";
+    mostrarArbol(arbol->izq, cont+1);
+}
+
+
+bool Arbol::buscar(int dato) const {
+    return buscarArbol(raiz, dato);
+}
+
+bool Arbol::buscarArbol(Nodo *arbol, int n) const {
+    if (arbol == nullptr) {
+        return false;
+    }
+    if (arbol->dato == n) {
+        return true;
+    }
+    if (n < arbol->dato) {
+        return buscarArbol(arbol->izq, n);
+    }
+    return buscarArbol(arbol->der, n);
+}
+
+
+void Arbol::recorrerInOrden() const {
+    inOrden(raiz);
+    cout << "\n";
+}
+
+void Arbol::inOrden(Nodo *arbol) const {
+    if (arbol == nullptr) {
+        return;
+    }
+    inOrden(arbol->izq);
+    cout << arbol->dato << " - ";
+    inOrden(arbol->der);
+}
+
+
+
+int Arbol::obtenerAltura(Nodo *nodo) const {
+    return nodo ? nodo->altura : 0;
+}
+
+
+void Arbol::actualizarAltura(Nodo *nodo) {
+    if (nodo) {
+        int alturaIzq = obtenerAltura(nodo->izq);
+        int alturaDer = obtenerAltura(nodo->der);
+        nodo->altura = 1 + (alturaIzq > alturaDer ? alturaIzq : alturaDer);
+    }
+}
+
+
+int Arbol::obtenerFactorBalance(Nodo *nodo) const {
+    return nodo ? obtenerAltura(nodo->izq) - obtenerAltura(nodo->der) : 0;
+}
+
+
+void Arbol::balancear(Nodo *&arbol, Nodo *branch) {
+    int fb = obtenerFactorBalance(arbol);
+    if (fb > 1) {
+        if (obtenerFactorBalance(arbol->izq) < 0) {
+            rotacionIzq(arbol->izq);
+        }
+        rotacionDer(arbol);
+    } else if (fb < -1) {
+        if (obtenerFactorBalance(arbol->der) > 0) {
+            rotacionDer(arbol->der);
+        }
+        rotacionIzq(arbol);
+    }
+}
+
+
+void Arbol::rotacionIzq(Nodo *&nodo) {
+    Nodo *aux = nodo->der;
+    nodo->der = aux->izq;
+    aux->izq = nodo;
+    nodo = aux;
+    actualizarAltura(nodo->izq);
+    actualizarAltura(nodo);
+}
+
+
+void Arbol::rotacionDer(Nodo *&nodo) {
+    Nodo *aux = nodo->izq;
+    nodo->izq = aux->der;
+    aux->der = nodo;
+    nodo = aux;
+    actualizarAltura(nodo->der);
+    actualizarAltura(nodo);
 }
