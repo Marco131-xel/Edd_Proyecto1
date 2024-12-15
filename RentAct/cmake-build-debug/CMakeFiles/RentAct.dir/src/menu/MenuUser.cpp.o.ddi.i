@@ -43380,11 +43380,12 @@ class Arbol {
         Arbol() : raiz(nullptr) {}
         NodoA* obtenerMin(NodoA*);
         NodoA* buscarNodo(NodoA*, int);
+        NodoA* getRaiz() const;
         void insertar(Activo);
         void mostrar() const;
         bool buscar(int) const;
         void eliminar(int);
-        void modificarActivo(int, string, string);
+        void modificarActivo(int, string);
         void recorrerPreOrden() const;
         void recorrerInOrden() const;
         void recorrerPostOrden() const;
@@ -43424,7 +43425,7 @@ class MenuUser {
         void display(NodoM* usuario);
 };
 # 2 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/menu/MenuUser.cpp" 2
-# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/menu/../../include/Agregar_Activo.h" 1
+# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/menu/../../include/Activo_User.h" 1
 
 
 
@@ -43433,7 +43434,7 @@ class MenuUser {
 
 using namespace std;
 
-class Agregar_Activo {
+class Activo_User {
     public:
     string nombre_activo;
     string descripcion;
@@ -43444,14 +43445,16 @@ class Agregar_Activo {
 
     Activo nuevoActivo;
 
-    Agregar_Activo();
+    Activo_User();
     void agregar_activo(NodoM* usuario);
     void mostrar_activo(NodoM* usuario);
+    void eliminar_activo(NodoM* usuario);
+    void modificar_activo(NodoM* usuario);
 };
 # 3 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/menu/MenuUser.cpp" 2
 using namespace std;
 
-Agregar_Activo agregar;
+Activo_User activo_user;
 
 MenuUser::MenuUser() {
 
@@ -43478,14 +43481,15 @@ void MenuUser::display(NodoM* usuario) {
         switch (opt) {
             case 1:
                 cout << "\t :::: Agregar Activo :::: " << endl;
-                agregar.agregar_activo(usuario);
+                activo_user.agregar_activo(usuario);
             break;
             case 2:
                 cout << "\t :::: Eliminar Activo :::: " << endl;
-                agregar.mostrar_activo(usuario);
+                activo_user.eliminar_activo(usuario);
             break;
             case 3:
                 cout << "\t :::: Modificar Activo :::: " << endl;
+                activo_user.modificar_activo(usuario);
             break;
             case 4:
                 cout << "\t :::: Rentar Activo :::: " << endl;
@@ -43495,6 +43499,7 @@ void MenuUser::display(NodoM* usuario) {
             break;
             case 6:
                 cout << "\t :::: Mis Activos Rentados :::: " << endl;
+                activo_user.mostrar_activo(usuario);
             break;
             case 7:
                 cout << "\t\n Cerrando Sesion ....\n " << endl;

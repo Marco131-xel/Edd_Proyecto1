@@ -1,11 +1,20 @@
-# 0 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/Login.cpp"
+# 0 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/Activo_User.cpp"
 # 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/cmake-build-debug//"
 # 0 "<interno>"
 # 0 "<línea-de-órdenes>"
 # 1 "/usr/include/stdc-predef.h" 1 3 4
 # 0 "<línea-de-órdenes>" 2
-# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/Login.cpp"
-# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/../../include/Login.h" 1
+# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/Activo_User.cpp"
+# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/../../include/Activo_User.h" 1
+
+
+# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/../../include/NodoM.h" 1
+
+
+# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/../../include/Arbol.h" 1
+
+
+# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/../../include/NodoA.h" 1
 
 
 # 1 "/usr/include/c++/14.2.1/iostream" 1 3
@@ -43310,67 +43319,15 @@ namespace std __attribute__ ((__visibility__ ("default")))
 
 
 }
-# 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/../../include/Login.h" 2
+# 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/../../include/NodoA.h" 2
 
-
-# 5 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/../../include/Login.h"
-using namespace std;
-
-class Login {
-    public:
-        string nombre;
-        string password;
-        void login_admin();
-        void login_user();
-};
-# 2 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/Login.cpp" 2
-# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/../../include/LoginAdmin.h" 1
+# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/../../include/Activo.h" 1
 
 
 
 
-using namespace std;
 
-class LoginAdmin {
-    public:
-        LoginAdmin(const string &user, const string &password);
-        bool authenticate(const string& inputUser, const string& inputPassword) const;
-    private:
-        string adminUser;
-        string adminPassword;
-};
-# 3 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/Login.cpp" 2
-# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/../../include/MenuAdmin.h" 1
-
-
-
-using namespace std;
-
-class MenuAdmin {
-    public:
-        MenuAdmin();
-        void display();
-};
-# 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/Login.cpp" 2
-# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/../../include/MenuUser.h" 1
-
-
-# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/../../include/NodoM.h" 1
-
-
-# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/../../include/Arbol.h" 1
-
-
-# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/../../include/NodoA.h" 1
-
-
-
-
-# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/../../include/Activo.h" 1
-
-
-
-
+# 5 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/../../include/Activo.h"
 using namespace std;
 
 class Activo {
@@ -43383,7 +43340,7 @@ class Activo {
 
         Activo();
 };
-# 6 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/../../include/NodoA.h" 2
+# 6 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/../../include/NodoA.h" 2
 
 using namespace std;
 
@@ -43398,7 +43355,7 @@ class NodoA {
 
         NodoA(Activo a);
 };
-# 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/../../include/Arbol.h" 2
+# 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/../../include/Arbol.h" 2
 
 
 class Arbol {
@@ -43433,7 +43390,7 @@ class Arbol {
         void recorrerInOrden() const;
         void recorrerPostOrden() const;
 };
-# 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/../../include/NodoM.h" 2
+# 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/../../include/NodoM.h" 2
 
 
 using namespace std;
@@ -43458,93 +43415,127 @@ public:
 
     NodoM(string nombreUsuario, string contrasenia, string nombreCompleto);
 };
-# 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/../../include/MenuUser.h" 2
-
-using namespace std;
-
-class MenuUser {
-    public:
-        MenuUser();
-        void display(NodoM* usuario);
-};
-# 5 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/Login.cpp" 2
-# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/../../include/Global.h" 1
-
-
-# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/../../include/MatrizDispersa.h" 1
-
+# 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/../../include/Activo_User.h" 2
 
 
 
 using namespace std;
 
-class MatrizDispersa {
-    private:
-        NodoM* cabH;
-        NodoM* cabV;
-
+class Activo_User {
     public:
-        MatrizDispersa();
-        void agregarUsuario(string departamento, string empresa, string nombreUsuario,
-            string contrasenia, string nombreComp\U0000013aeto);
-        void mostrarUsuario();
-        bool buscarUsuario(string nombreUsuario, string contrasenia);
-        NodoM* insertarCabeceraH(string departamento);
-        NodoM* insertarCabeceraV(string empresa);
-        NodoM* cabeceraHorizontal(string departamento);
-        NodoM* cabeceraVertical(string empresa);
-        NodoM* enCabeceraV(NodoM* nodo);
+    string nombre_activo;
+    string descripcion;
+    int idR;
+    string idT;
+    string generarIDTRAN();
+    int crearID();
 
-        void mostrarCabeceras();
-        NodoM* usuarioActual;
+    Activo nuevoActivo;
+
+    Activo_User();
+    void agregar_activo(NodoM* usuario);
+    void mostrar_activo(NodoM* usuario);
+    void eliminar_activo(NodoM* usuario);
+    void modificar_activo(NodoM* usuario);
 };
-# 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/../../include/Global.h" 2
+# 2 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/Activo_User.cpp" 2
 
 
-extern MatrizDispersa matriz;
-# 6 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/Login.cpp" 2
+
+Activo_User::Activo_User(): nuevoActivo() {
+}
 
 
-MenuUser menu_user;
-MenuAdmin menu_admin;
+string Activo_User::generarIDTRAN() {
+    string id;
+    for(int i = 0; i < 15; i++) {
+        if (i % 2 == 0) {
+
+            char letra = 'a' + rand() % 26;
+            id += letra;
+        } else {
+
+            char numero = '0' + rand() % 10;
+            id += numero;
+        }
+    }
+    return id;
+}
 
 
-void Login::login_admin() {
-
-    LoginAdmin login_admin("admin", "admin");
-
-
-    string inputUser;
-    string inputPass;
+int Activo_User::crearID() {
+    static int contador = 0;
+    contador = (contador % 100) + 1;
+    return contador;
+}
 
 
-    cout << " :::: Login Administrador :::: " << endl;
-    cout << "Usuario: ";
-    cin >> inputUser;
-    cout << "Contrasenia: ";
-    cin >> inputPass;
+
+void Activo_User::agregar_activo(NodoM* usuario) {
+    cout << "Ingresar Nombre: ";
+    cin >> nombre_activo;
+    cout << "Ingresar Descripcion: ";
+    cin >> descripcion;
+    cout << endl;
+
+    idT = generarIDTRAN();
+
+    idR = crearID();
+    cout << "ID generado: " << idR << " Transc: "<< idT<< endl;
+    Activo* nuevoActivo = new Activo(idR, nombre_activo, descripcion, idT);
+    usuario->activos->insertar(*nuevoActivo);
+    cout << "\t -- Activo agregado --" << endl;
+}
 
 
-    if (login_admin.authenticate(inputUser, inputPass)) {
-        cout << "\t\n -- Inicio de Sesion Exitoso -- \n" << endl;
-        menu_admin.display();
+void Activo_User::mostrar_activo(NodoM* usuario) {
+    cout << "activos de : " << usuario->nombreUsuario << endl;
+    usuario->activos->mostrar();
+    cout << "\n" << endl;
+}
+
+
+void Activo_User::eliminar_activo(NodoM *usuario) {
+    cout << "Ingrese el ID para eliminar activo: ";
+    cin >> idR;
+
+    if (usuario->activos->buscar(idR)) {
+
+        NodoA *nodo = usuario->activos->buscarNodo(usuario->activos->getRaiz(), idR);
+        if (nodo != nullptr) {
+            cout << "Datos del activo a eliminar: " << endl;
+            cout << "ID: " << nodo->activo.idR << endl;
+            cout << "Nombre: " << nodo->activo.nombre << endl;
+            cout << "Descripcion: " << nodo->activo.descripcion << endl;
+        }
+
+        usuario->activos->eliminar(idR);
+        cout << "\t --Activo eliminado--\n" << endl;
     } else {
-        cout << "\n ** Usuario o contrasenia incorrectos ** \n" << endl;
+        cout << "\t ** ID no encontrado en los activos **" << endl;
     }
 }
 
 
-void Login::login_user() {
-    cout << " :::: Login Usuario :::: " << endl;
-    cout << "Ingresar Usuario: ";
-    cin >> nombre;
-    cout << "Ingresar Contrasenia: ";
-    cin >> password;
+void Activo_User::modificar_activo(NodoM *usuario) {
+    cout << "Ingrese el ID para modificar activo: ";
+    cin >> idR;
 
-    if (matriz.buscarUsuario(nombre, password)) {
-        cout << "\t\n -- Inicio de Sesion Exitoso -- \n" << endl;
-        menu_user.display(matriz.usuarioActual);
+    if (usuario->activos->buscar(idR)) {
+
+        NodoA *nodo = usuario->activos->buscarNodo(usuario->activos->getRaiz(), idR);
+        if (nodo != nullptr) {
+            cout << "Datos del activo" << endl;
+            cout << "ID: " << nodo->activo.idR << "; Nombre: " << nodo->activo.nombre <<
+                "; Descripcion: " << nodo->activo.descripcion << endl;
+        }
+
+        cout << "Ingresa nueva descripcion: ";
+        cin >> descripcion;
+        usuario->activos->modificarActivo(idR, descripcion);
+        cout << "\t --Activo Modificado --\n" << endl;
     } else {
-        cout << "\n ** Usuario o Contrasenia incorrectos ** \n" << endl;
+        cout << "\t ** ID no encontrado en los activos **" << endl;
     }
+
 }

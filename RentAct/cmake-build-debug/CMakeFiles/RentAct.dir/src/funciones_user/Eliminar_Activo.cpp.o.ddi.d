@@ -1,10 +1,10 @@
-CMakeFiles/RentAct.dir/src/menu/MenuUser.cpp.o.ddi: \
- /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/menu/MenuUser.cpp \
+CMakeFiles/RentAct.dir/src/funciones_user/Eliminar_Activo.cpp.o.ddi: \
+ /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/Eliminar_Activo.cpp \
  /usr/include/stdc-predef.h \
- /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/menu/../../include/MenuUser.h \
- /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/menu/../../include/NodoM.h \
- /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/menu/../../include/Arbol.h \
- /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/menu/../../include/NodoA.h \
+ /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/../../include/Eliminar_Activo.h \
+ /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/../../include/NodoM.h \
+ /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/../../include/Arbol.h \
+ /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/../../include/NodoA.h \
  /usr/include/c++/14.2.1/iostream \
  /usr/include/c++/14.2.1/bits/requires_hosted.h \
  /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/c++config.h \
@@ -148,5 +148,4 @@ CMakeFiles/RentAct.dir/src/menu/MenuUser.cpp.o.ddi: \
  /usr/include/c++/14.2.1/bits/basic_ios.tcc \
  /usr/include/c++/14.2.1/bits/ostream.tcc /usr/include/c++/14.2.1/istream \
  /usr/include/c++/14.2.1/bits/istream.tcc \
- /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/menu/../../include/Activo.h \
- /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/menu/../../include/Activo_User.h
+ /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/../../include/Activo.h

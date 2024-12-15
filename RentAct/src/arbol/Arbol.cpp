@@ -71,6 +71,10 @@ void Arbol::inOrden(NodoA *arbol) const {
     inOrden(arbol->der);
 }
 
+// getter para raiz
+NodoA *Arbol::getRaiz() const {
+    return raiz;
+}
 
 // funcion para obtener altura del arbol
 int Arbol::obtenerAltura(NodoA *nodo) const {
@@ -167,10 +171,9 @@ NodoA *Arbol::obtenerMin(NodoA * arbol) {
 }
 
 // funcion para modificar un activo
-void Arbol::modificarActivo(int n, string nuevoNombre,  string nuevaDescp) {
+void Arbol::modificarActivo(int n, string nuevaDescp) {
     NodoA* nodo = buscarNodo(raiz, n);
     if (nodo != nullptr) {
-        nodo->activo.nombre = nuevoNombre;
         nodo->activo.descripcion = nuevaDescp;
     }
 }

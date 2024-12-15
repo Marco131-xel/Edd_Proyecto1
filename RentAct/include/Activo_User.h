@@ -1,12 +1,12 @@
-#ifndef AGREGAR_ACTIVO_H
-#define AGREGAR_ACTIVO_H
+#ifndef ACTIVO_USER_H
+#define ACTIVO_USER_H
 #include "NodoM.h"
 #include "Activo.h"
 #include <iostream>
 
 using namespace std;
 
-class Agregar_Activo {
+class Activo_User {
     public:
     string nombre_activo;
     string descripcion;
@@ -17,9 +17,11 @@ class Agregar_Activo {
     // pasor los datos al arbol
     Activo nuevoActivo;
 
-    Agregar_Activo();
+    Activo_User();
     void agregar_activo(NodoM* usuario);
     void mostrar_activo(NodoM* usuario);
+    void eliminar_activo(NodoM* usuario);
+    void modificar_activo(NodoM* usuario);
 };
 
-#endif //AGREGAR_ACTIVO_H
+#endif //ACTIVO_USER_H

@@ -22,11 +22,12 @@ add_executable(RentAct main.cpp
         include/Global.h
         src/arbol/Arbol.cpp
         include/Arbol.h
-        src/funciones_user/Agregar_Activo.cpp
-        include/Agregar_Activo.h
+        src/funciones_user/Activo_User.cpp
+        include/Activo_User.h
         src/nodos/NodoM.cpp
         src/nodos/NodoA.cpp
         include/NodoA.h
         include/NodoM.h
         src/funciones_user/Activo.cpp
-        include/Activo.h)
+        include/Activo.h
+)

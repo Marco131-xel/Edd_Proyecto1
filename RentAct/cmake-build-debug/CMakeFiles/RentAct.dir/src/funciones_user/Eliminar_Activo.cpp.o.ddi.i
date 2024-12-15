@@ -1,11 +1,20 @@
-# 0 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/Login.cpp"
+# 0 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/Eliminar_Activo.cpp"
 # 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/cmake-build-debug//"
 # 0 "<interno>"
 # 0 "<línea-de-órdenes>"
 # 1 "/usr/include/stdc-predef.h" 1 3 4
 # 0 "<línea-de-órdenes>" 2
-# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/Login.cpp"
-# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/../../include/Login.h" 1
+# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/Eliminar_Activo.cpp"
+# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/../../include/Eliminar_Activo.h" 1
+
+
+# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/../../include/NodoM.h" 1
+
+
+# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/../../include/Arbol.h" 1
+
+
+# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/../../include/NodoA.h" 1
 
 
 # 1 "/usr/include/c++/14.2.1/iostream" 1 3
@@ -43310,67 +43319,15 @@ namespace std __attribute__ ((__visibility__ ("default")))
 
 
 }
-# 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/../../include/Login.h" 2
+# 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/../../include/NodoA.h" 2
 
-
-# 5 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/../../include/Login.h"
-using namespace std;
-
-class Login {
-    public:
-        string nombre;
-        string password;
-        void login_admin();
-        void login_user();
-};
-# 2 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/Login.cpp" 2
-# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/../../include/LoginAdmin.h" 1
+# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/../../include/Activo.h" 1
 
 
 
 
-using namespace std;
 
-class LoginAdmin {
-    public:
-        LoginAdmin(const string &user, const string &password);
-        bool authenticate(const string& inputUser, const string& inputPassword) const;
-    private:
-        string adminUser;
-        string adminPassword;
-};
-# 3 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/Login.cpp" 2
-# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/../../include/MenuAdmin.h" 1
-
-
-
-using namespace std;
-
-class MenuAdmin {
-    public:
-        MenuAdmin();
-        void display();
-};
-# 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/Login.cpp" 2
-# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/../../include/MenuUser.h" 1
-
-
-# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/../../include/NodoM.h" 1
-
-
-# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/../../include/Arbol.h" 1
-
-
-# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/../../include/NodoA.h" 1
-
-
-
-
-# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/../../include/Activo.h" 1
-
-
-
-
+# 5 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/../../include/Activo.h"
 using namespace std;
 
 class Activo {
@@ -43383,7 +43340,7 @@ class Activo {
 
         Activo();
 };
-# 6 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/../../include/NodoA.h" 2
+# 6 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/../../include/NodoA.h" 2
 
 using namespace std;
 
@@ -43398,7 +43355,7 @@ class NodoA {
 
         NodoA(Activo a);
 };
-# 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/../../include/Arbol.h" 2
+# 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/../../include/Arbol.h" 2
 
 
 class Arbol {
@@ -43423,17 +43380,16 @@ class Arbol {
         Arbol() : raiz(nullptr) {}
         NodoA* obtenerMin(NodoA*);
         NodoA* buscarNodo(NodoA*, int);
-        NodoA* getRaiz() const;
         void insertar(Activo);
         void mostrar() const;
         bool buscar(int) const;
         void eliminar(int);
-        void modificarActivo(int, string);
+        void modificarActivo(int, string, string);
         void recorrerPreOrden() const;
         void recorrerInOrden() const;
         void recorrerPostOrden() const;
 };
-# 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/../../include/NodoM.h" 2
+# 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/../../include/NodoM.h" 2
 
 
 using namespace std;
@@ -43458,93 +43414,36 @@ public:
 
     NodoM(string nombreUsuario, string contrasenia, string nombreCompleto);
 };
-# 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/../../include/MenuUser.h" 2
-
-using namespace std;
-
-class MenuUser {
-    public:
-        MenuUser();
-        void display(NodoM* usuario);
-};
-# 5 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/Login.cpp" 2
-# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/../../include/Global.h" 1
-
-
-# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/../../include/MatrizDispersa.h" 1
-
+# 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/../../include/Eliminar_Activo.h" 2
 
 
 
 using namespace std;
 
-class MatrizDispersa {
-    private:
-        NodoM* cabH;
-        NodoM* cabV;
-
+class Eliminar_Activo {
     public:
-        MatrizDispersa();
-        void agregarUsuario(string departamento, string empresa, string nombreUsuario,
-            string contrasenia, string nombreComp\U0000013aeto);
-        void mostrarUsuario();
-        bool buscarUsuario(string nombreUsuario, string contrasenia);
-        NodoM* insertarCabeceraH(string departamento);
-        NodoM* insertarCabeceraV(string empresa);
-        NodoM* cabeceraHorizontal(string departamento);
-        NodoM* cabeceraVertical(string empresa);
-        NodoM* enCabeceraV(NodoM* nodo);
+        Eliminar_Activo();
+        int id;
+        void eliminar_Activo(NodoM* usuario);
 
-        void mostrarCabeceras();
-        NodoM* usuarioActual;
 };
-# 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/../../include/Global.h" 2
+# 2 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/Eliminar_Activo.cpp" 2
 
 
-extern MatrizDispersa matriz;
-# 6 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/Login.cpp" 2
+Eliminar_Activo::Eliminar_Activo() {
 
-
-MenuUser menu_user;
-MenuAdmin menu_admin;
-
-
-void Login::login_admin() {
-
-    LoginAdmin login_admin("admin", "admin");
-
-
-    string inputUser;
-    string inputPass;
-
-
-    cout << " :::: Login Administrador :::: " << endl;
-    cout << "Usuario: ";
-    cin >> inputUser;
-    cout << "Contrasenia: ";
-    cin >> inputPass;
-
-
-    if (login_admin.authenticate(inputUser, inputPass)) {
-        cout << "\t\n -- Inicio de Sesion Exitoso -- \n" << endl;
-        menu_admin.display();
-    } else {
-        cout << "\n ** Usuario o contrasenia incorrectos ** \n" << endl;
-    }
 }
 
 
-void Login::login_user() {
-    cout << " :::: Login Usuario :::: " << endl;
-    cout << "Ingresar Usuario: ";
-    cin >> nombre;
-    cout << "Ingresar Contrasenia: ";
-    cin >> password;
+void Eliminar_Activo::eliminar_Activo(NodoM* usuario) {
+    cout << "Ingrese el ID para eliminar activo: ";
+    cin >> id;
 
-    if (matriz.buscarUsuario(nombre, password)) {
-        cout << "\t\n -- Inicio de Sesion Exitoso -- \n" << endl;
-        menu_user.display(matriz.usuarioActual);
+    if (usuario->activos->buscar(id)) {
+        cout << "Activo eliminado" << endl;
+        usuario->activos->mostrar();
+        usuario->activos->eliminar(id);
     } else {
-        cout << "\n ** Usuario o Contrasenia incorrectos ** \n" << endl;
+        cout << "ID no encontrado en el arbol" << endl;
     }
 }

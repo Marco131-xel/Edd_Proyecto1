@@ -43374,11 +43374,12 @@ class Arbol {
         Arbol() : raiz(nullptr) {}
         NodoA* obtenerMin(NodoA*);
         NodoA* buscarNodo(NodoA*, int);
+        NodoA* getRaiz() const;
         void insertar(Activo);
         void mostrar() const;
         bool buscar(int) const;
         void eliminar(int);
-        void modificarActivo(int, string, string);
+        void modificarActivo(int, string);
         void recorrerPreOrden() const;
         void recorrerInOrden() const;
         void recorrerPostOrden() const;
@@ -43456,6 +43457,10 @@ void Arbol::inOrden(NodoA *arbol) const {
     inOrden(arbol->der);
 }
 
+
+NodoA *Arbol::getRaiz() const {
+    return raiz;
+}
 
 
 int Arbol::obtenerAltura(NodoA *nodo) const {
@@ -43552,10 +43557,9 @@ NodoA *Arbol::obtenerMin(NodoA * arbol) {
 }
 
 
-void Arbol::modificarActivo(int n, string nuevoNombre, string nuevaDescp) {
+void Arbol::modificarActivo(int n, string nuevaDescp) {
     NodoA* nodo = buscarNodo(raiz, n);
     if (nodo != nullptr) {
-        nodo->activo.nombre = nuevoNombre;
         nodo->activo.descripcion = nuevaDescp;
     }
 }

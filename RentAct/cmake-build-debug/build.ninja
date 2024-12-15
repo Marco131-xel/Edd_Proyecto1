@@ -199,16 +199,16 @@ build CMakeFiles/RentAct.dir/src/arbol/Arbol.cpp.o: CXX_COMPILER__RentAct_scanne
   OBJECT_FILE_DIR = CMakeFiles/RentAct.dir/src/arbol
   dyndep = CMakeFiles/RentAct.dir/CXX.dd
 
-build CMakeFiles/RentAct.dir/src/funciones_user/Agregar_Activo.cpp.o.ddi: CXX_SCAN__RentAct_Debug /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/Agregar_Activo.cpp || cmake_object_order_depends_target_RentAct
-  DEP_FILE = CMakeFiles/RentAct.dir/src/funciones_user/Agregar_Activo.cpp.o.ddi.d
-  DYNDEP_INTERMEDIATE_FILE = CMakeFiles/RentAct.dir/src/funciones_user/Agregar_Activo.cpp.o.ddi
+build CMakeFiles/RentAct.dir/src/funciones_user/Activo_User.cpp.o.ddi: CXX_SCAN__RentAct_Debug /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/Activo_User.cpp || cmake_object_order_depends_target_RentAct
+  DEP_FILE = CMakeFiles/RentAct.dir/src/funciones_user/Activo_User.cpp.o.ddi.d
+  DYNDEP_INTERMEDIATE_FILE = CMakeFiles/RentAct.dir/src/funciones_user/Activo_User.cpp.o.ddi
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  OBJ_FILE = CMakeFiles/RentAct.dir/src/funciones_user/Agregar_Activo.cpp.o
-  PREPROCESSED_OUTPUT_FILE = CMakeFiles/RentAct.dir/src/funciones_user/Agregar_Activo.cpp.o.ddi.i
+  OBJ_FILE = CMakeFiles/RentAct.dir/src/funciones_user/Activo_User.cpp.o
+  PREPROCESSED_OUTPUT_FILE = CMakeFiles/RentAct.dir/src/funciones_user/Activo_User.cpp.o.ddi.i
 
-build CMakeFiles/RentAct.dir/src/funciones_user/Agregar_Activo.cpp.o: CXX_COMPILER__RentAct_scanned_Debug /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/Agregar_Activo.cpp | CMakeFiles/RentAct.dir/src/funciones_user/Agregar_Activo.cpp.o.modmap || cmake_object_order_depends_target_RentAct CMakeFiles/RentAct.dir/CXX.dd
-  DEP_FILE = CMakeFiles/RentAct.dir/src/funciones_user/Agregar_Activo.cpp.o.d
-  DYNDEP_MODULE_MAP_FILE = CMakeFiles/RentAct.dir/src/funciones_user/Agregar_Activo.cpp.o.modmap
+build CMakeFiles/RentAct.dir/src/funciones_user/Activo_User.cpp.o: CXX_COMPILER__RentAct_scanned_Debug /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/Activo_User.cpp | CMakeFiles/RentAct.dir/src/funciones_user/Activo_User.cpp.o.modmap || cmake_object_order_depends_target_RentAct CMakeFiles/RentAct.dir/CXX.dd
+  DEP_FILE = CMakeFiles/RentAct.dir/src/funciones_user/Activo_User.cpp.o.d
+  DYNDEP_MODULE_MAP_FILE = CMakeFiles/RentAct.dir/src/funciones_user/Activo_User.cpp.o.modmap
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles/RentAct.dir
   OBJECT_FILE_DIR = CMakeFiles/RentAct.dir/src/funciones_user
@@ -259,7 +259,7 @@ build CMakeFiles/RentAct.dir/src/funciones_user/Activo.cpp.o: CXX_COMPILER__Rent
   OBJECT_FILE_DIR = CMakeFiles/RentAct.dir/src/funciones_user
   dyndep = CMakeFiles/RentAct.dir/CXX.dd
 
-build CMakeFiles/RentAct.dir/CXX.dd | /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/cmake-build-debug/CMakeFiles/RentAct.dir/CXXModules.json CMakeFiles/RentAct.dir/main.cpp.o.modmap CMakeFiles/RentAct.dir/src/menu/MenuUser.cpp.o.modmap CMakeFiles/RentAct.dir/src/login/Login.cpp.o.modmap CMakeFiles/RentAct.dir/src/menu/MenuAdmin.cpp.o.modmap CMakeFiles/RentAct.dir/src/login/LoginAdmin.cpp.o.modmap CMakeFiles/RentAct.dir/src/login/Inicio.cpp.o.modmap CMakeFiles/RentAct.dir/src/matriz/MatrizDispersa.cpp.o.modmap CMakeFiles/RentAct.dir/src/funciones_admin/Registrar_Usuario.cpp.o.modmap CMakeFiles/RentAct.dir/src/matriz/Global.cpp.o.modmap CMakeFiles/RentAct.dir/src/arbol/Arbol.cpp.o.modmap CMakeFiles/RentAct.dir/src/funciones_user/Agregar_Activo.cpp.o.modmap CMakeFiles/RentAct.dir/src/nodos/NodoM.cpp.o.modmap CMakeFiles/RentAct.dir/src/nodos/NodoA.cpp.o.modmap CMakeFiles/RentAct.dir/src/funciones_user/Activo.cpp.o.modmap: CXX_DYNDEP__RentAct_Debug CMakeFiles/RentAct.dir/main.cpp.o.ddi CMakeFiles/RentAct.dir/src/menu/MenuUser.cpp.o.ddi CMakeFiles/RentAct.dir/src/login/Login.cpp.o.ddi CMakeFiles/RentAct.dir/src/menu/MenuAdmin.cpp.o.ddi CMakeFiles/RentAct.dir/src/login/LoginAdmin.cpp.o.ddi CMakeFiles/RentAct.dir/src/login/Inicio.cpp.o.ddi CMakeFiles/RentAct.dir/src/matriz/MatrizDispersa.cpp.o.ddi CMakeFiles/RentAct.dir/src/funciones_admin/Registrar_Usuario.cpp.o.ddi CMakeFiles/RentAct.dir/src/matriz/Global.cpp.o.ddi CMakeFiles/RentAct.dir/src/arbol/Arbol.cpp.o.ddi CMakeFiles/RentAct.dir/src/funciones_user/Agregar_Activo.cpp.o.ddi CMakeFiles/RentAct.dir/src/nodos/NodoM.cpp.o.ddi CMakeFiles/RentAct.dir/src/nodos/NodoA.cpp.o.ddi CMakeFiles/RentAct.dir/src/funciones_user/Activo.cpp.o.ddi | /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/cmake-build-debug/CMakeFiles/RentAct.dir/CXXDependInfo.json
+build CMakeFiles/RentAct.dir/CXX.dd | /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/cmake-build-debug/CMakeFiles/RentAct.dir/CXXModules.json CMakeFiles/RentAct.dir/main.cpp.o.modmap CMakeFiles/RentAct.dir/src/menu/MenuUser.cpp.o.modmap CMakeFiles/RentAct.dir/src/login/Login.cpp.o.modmap CMakeFiles/RentAct.dir/src/menu/MenuAdmin.cpp.o.modmap CMakeFiles/RentAct.dir/src/login/LoginAdmin.cpp.o.modmap CMakeFiles/RentAct.dir/src/login/Inicio.cpp.o.modmap CMakeFiles/RentAct.dir/src/matriz/MatrizDispersa.cpp.o.modmap CMakeFiles/RentAct.dir/src/funciones_admin/Registrar_Usuario.cpp.o.modmap CMakeFiles/RentAct.dir/src/matriz/Global.cpp.o.modmap CMakeFiles/RentAct.dir/src/arbol/Arbol.cpp.o.modmap CMakeFiles/RentAct.dir/src/funciones_user/Activo_User.cpp.o.modmap CMakeFiles/RentAct.dir/src/nodos/NodoM.cpp.o.modmap CMakeFiles/RentAct.dir/src/nodos/NodoA.cpp.o.modmap CMakeFiles/RentAct.dir/src/funciones_user/Activo.cpp.o.modmap: CXX_DYNDEP__RentAct_Debug CMakeFiles/RentAct.dir/main.cpp.o.ddi CMakeFiles/RentAct.dir/src/menu/MenuUser.cpp.o.ddi CMakeFiles/RentAct.dir/src/login/Login.cpp.o.ddi CMakeFiles/RentAct.dir/src/menu/MenuAdmin.cpp.o.ddi CMakeFiles/RentAct.dir/src/login/LoginAdmin.cpp.o.ddi CMakeFiles/RentAct.dir/src/login/Inicio.cpp.o.ddi CMakeFiles/RentAct.dir/src/matriz/MatrizDispersa.cpp.o.ddi CMakeFiles/RentAct.dir/src/funciones_admin/Registrar_Usuario.cpp.o.ddi CMakeFiles/RentAct.dir/src/matriz/Global.cpp.o.ddi CMakeFiles/RentAct.dir/src/arbol/Arbol.cpp.o.ddi CMakeFiles/RentAct.dir/src/funciones_user/Activo_User.cpp.o.ddi CMakeFiles/RentAct.dir/src/nodos/NodoM.cpp.o.ddi CMakeFiles/RentAct.dir/src/nodos/NodoA.cpp.o.ddi CMakeFiles/RentAct.dir/src/funciones_user/Activo.cpp.o.ddi | /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/cmake-build-debug/CMakeFiles/RentAct.dir/CXXDependInfo.json
 
 
 # =============================================================================
@@ -269,7 +269,7 @@ build CMakeFiles/RentAct.dir/CXX.dd | /home/marco/Documentos/Diciembre/edd/Edd_P
 #############################################
 # Link the executable RentAct
 
-build RentAct: CXX_EXECUTABLE_LINKER__RentAct_Debug CMakeFiles/RentAct.dir/main.cpp.o CMakeFiles/RentAct.dir/src/menu/MenuUser.cpp.o CMakeFiles/RentAct.dir/src/login/Login.cpp.o CMakeFiles/RentAct.dir/src/menu/MenuAdmin.cpp.o CMakeFiles/RentAct.dir/src/login/LoginAdmin.cpp.o CMakeFiles/RentAct.dir/src/login/Inicio.cpp.o CMakeFiles/RentAct.dir/src/matriz/MatrizDispersa.cpp.o CMakeFiles/RentAct.dir/src/funciones_admin/Registrar_Usuario.cpp.o CMakeFiles/RentAct.dir/src/matriz/Global.cpp.o CMakeFiles/RentAct.dir/src/arbol/Arbol.cpp.o CMakeFiles/RentAct.dir/src/funciones_user/Agregar_Activo.cpp.o CMakeFiles/RentAct.dir/src/nodos/NodoM.cpp.o CMakeFiles/RentAct.dir/src/nodos/NodoA.cpp.o CMakeFiles/RentAct.dir/src/funciones_user/Activo.cpp.o
+build RentAct: CXX_EXECUTABLE_LINKER__RentAct_Debug CMakeFiles/RentAct.dir/main.cpp.o CMakeFiles/RentAct.dir/src/menu/MenuUser.cpp.o CMakeFiles/RentAct.dir/src/login/Login.cpp.o CMakeFiles/RentAct.dir/src/menu/MenuAdmin.cpp.o CMakeFiles/RentAct.dir/src/login/LoginAdmin.cpp.o CMakeFiles/RentAct.dir/src/login/Inicio.cpp.o CMakeFiles/RentAct.dir/src/matriz/MatrizDispersa.cpp.o CMakeFiles/RentAct.dir/src/funciones_admin/Registrar_Usuario.cpp.o CMakeFiles/RentAct.dir/src/matriz/Global.cpp.o CMakeFiles/RentAct.dir/src/arbol/Arbol.cpp.o CMakeFiles/RentAct.dir/src/funciones_user/Activo_User.cpp.o CMakeFiles/RentAct.dir/src/nodos/NodoM.cpp.o CMakeFiles/RentAct.dir/src/nodos/NodoA.cpp.o CMakeFiles/RentAct.dir/src/funciones_user/Activo.cpp.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/RentAct.dir
   POST_BUILD = :

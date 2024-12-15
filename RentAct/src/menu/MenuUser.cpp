@@ -1,8 +1,8 @@
 #include "../../include/MenuUser.h"
-#include "../../include/Agregar_Activo.h"
+#include "../../include/Activo_User.h"
 using namespace std;
 
-Agregar_Activo agregar;
+Activo_User activo_user;
 // Constructor Vacio
 MenuUser::MenuUser() {
 
@@ -29,14 +29,15 @@ void MenuUser::display(NodoM* usuario) {
         switch (opt) {
             case 1:
                 cout << "\t :::: Agregar Activo :::: " << endl;
-                agregar.agregar_activo(usuario);
+                activo_user.agregar_activo(usuario);
             break;
             case 2:
                 cout << "\t :::: Eliminar Activo :::: " << endl;
-                agregar.mostrar_activo(usuario);
+                activo_user.eliminar_activo(usuario);
             break;
             case 3:
                 cout << "\t :::: Modificar Activo :::: " << endl;
+                activo_user.modificar_activo(usuario);
             break;
             case 4:
                 cout << "\t :::: Rentar Activo :::: " << endl;
@@ -46,6 +47,7 @@ void MenuUser::display(NodoM* usuario) {
             break;
             case 6:
                 cout << "\t :::: Mis Activos Rentados :::: " << endl;
+                activo_user.mostrar_activo(usuario);
             break;
             case 7:
                 cout << "\t\n Cerrando Sesion ....\n " << endl;

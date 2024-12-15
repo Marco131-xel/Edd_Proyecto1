@@ -43403,11 +43403,12 @@ class Arbol {
         Arbol() : raiz(nullptr) {}
         NodoA* obtenerMin(NodoA*);
         NodoA* buscarNodo(NodoA*, int);
+        NodoA* getRaiz() const;
         void insertar(Activo);
         void mostrar() const;
         bool buscar(int) const;
         void eliminar(int);
-        void modificarActivo(int, string, string);
+        void modificarActivo(int, string);
         void recorrerPreOrden() const;
         void recorrerInOrden() const;
         void recorrerPostOrden() const;
