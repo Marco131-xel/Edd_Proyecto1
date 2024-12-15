@@ -43318,21 +43318,42 @@ namespace std __attribute__ ((__visibility__ ("default")))
 }
 # 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/nodos/../../include/NodoA.h" 2
 
+# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/nodos/../../include/Activo.h" 1
 
-# 5 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/nodos/../../include/NodoA.h"
+
+
+
+
+# 5 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/nodos/../../include/Activo.h"
+using namespace std;
+
+class Activo {
+    public:
+        int idR;
+        string nombre;
+        string descripcion;
+        string idT;
+        Activo(int idR, string nombre, string descripcion, string idT);
+
+        Activo();
+};
+# 6 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/nodos/../../include/NodoA.h" 2
+
 using namespace std;
 
 class NodoA {
     public:
 
-        int dato;
+        Activo activo;
+
         NodoA *izq;
         NodoA *der;
-        NodoA *branch;
+
         int altura;
 
 
-        NodoA(int valor, NodoA *branch);
+
+        NodoA(Activo a);
 };
 # 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/nodos/../../include/Arbol.h" 2
 
@@ -43341,7 +43362,7 @@ class Arbol {
     private:
         NodoA* raiz;
 
-        void insertarNodo(NodoA *&, int, NodoA*);
+        void insertarNodo(NodoA *&, Activo, NodoA*);
         void mostrarArbol(NodoA *, int) const;
         bool buscarArbol(NodoA *, int) const;
         void preOrden(NodoA *) const;
@@ -43356,9 +43377,9 @@ class Arbol {
 
     public:
         Arbol() : raiz(nullptr) {}
-        void insertar(int dato);
+        void insertar(Activo);
         void mostrar() const;
-        bool buscar(int dato) const;
+        bool buscar(int) const;
         void recorrerPreOrden() const;
         void recorrerInOrden() const;
         void recorrerPostOrden() const;

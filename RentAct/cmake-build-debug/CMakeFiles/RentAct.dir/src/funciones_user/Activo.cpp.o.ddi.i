@@ -1,20 +1,11 @@
-# 0 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/Agregar_Activo.cpp"
+# 0 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/Activo.cpp"
 # 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/cmake-build-debug//"
 # 0 "<interno>"
 # 0 "<línea-de-órdenes>"
 # 1 "/usr/include/stdc-predef.h" 1 3 4
 # 0 "<línea-de-órdenes>" 2
-# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/Agregar_Activo.cpp"
-# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/../../include/Agregar_Activo.h" 1
-
-
-# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/../../include/NodoM.h" 1
-
-
-# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/../../include/Arbol.h" 1
-
-
-# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/../../include/NodoA.h" 1
+# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/Activo.cpp"
+# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/../../include/Activo.h" 1
 
 
 # 1 "/usr/include/c++/14.2.1/iostream" 1 3
@@ -43319,12 +43310,7 @@ namespace std __attribute__ ((__visibility__ ("default")))
 
 
 }
-# 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/../../include/NodoA.h" 2
-
-# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/../../include/Activo.h" 1
-
-
-
+# 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/../../include/Activo.h" 2
 
 
 # 5 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/../../include/Activo.h"
@@ -43340,150 +43326,11 @@ class Activo {
 
         Activo();
 };
-# 6 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/../../include/NodoA.h" 2
-
-using namespace std;
-
-class NodoA {
-    public:
-
-        Activo activo;
-
-        NodoA *izq;
-        NodoA *der;
-
-        int altura;
+# 2 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/Activo.cpp" 2
 
 
+Activo::Activo() {
 
-        NodoA(Activo a);
-};
-# 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/../../include/Arbol.h" 2
-
-
-class Arbol {
-    private:
-        NodoA* raiz;
-
-        void insertarNodo(NodoA *&, Activo, NodoA*);
-        void mostrarArbol(NodoA *, int) const;
-        bool buscarArbol(NodoA *, int) const;
-        void preOrden(NodoA *) const;
-        void inOrden(NodoA *) const;
-        void postOrden(NodoA *) const;
-        int obtenerAltura(NodoA *) const;
-        int obtenerFactorBalance(NodoA *) const;
-        void actualizarAltura(NodoA *);
-        void balancear(NodoA *&, NodoA *);
-        void rotacionIzq(NodoA *&);
-        void rotacionDer(NodoA *&);
-
-    public:
-        Arbol() : raiz(nullptr) {}
-        void insertar(Activo);
-        void mostrar() const;
-        bool buscar(int) const;
-        void recorrerPreOrden() const;
-        void recorrerInOrden() const;
-        void recorrerPostOrden() const;
-};
-# 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/../../include/NodoM.h" 2
-
-
-using namespace std;
-
-class NodoM {
-public:
-    string nombreUsuario;
-    string contrasenia;
-    string nombreCompleto;
-
-
-    Arbol *activos;
-
-
-    NodoM *next;
-    NodoM *prev;
-    NodoM *up;
-    NodoM *down;
-    NodoM *foward;
-    NodoM *backward;
-
-
-    NodoM(string nombreUsuario, string contrasenia, string nombreCompleto);
-};
-# 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/../../include/Agregar_Activo.h" 2
-
-
-
-using namespace std;
-
-class Agregar_Activo {
-    public:
-    string nombre_activo;
-    string descripcion;
-    int idR;
-    string idT;
-    string generarIDTRAN();
-    int crearID();
-
-    Activo nuevoActivo;
-
-    Agregar_Activo();
-    void agregar_activo(NodoM* usuario);
-    void mostrar_activo(NodoM* usuario);
-};
-# 2 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/Agregar_Activo.cpp" 2
-
-
-
-Agregar_Activo::Agregar_Activo(): nuevoActivo() {
 }
-
-
-string Agregar_Activo::generarIDTRAN() {
-    string id;
-    for(int i = 0; i < 15; i++) {
-        if (i % 2 == 0) {
-
-            char letra = 'a' + rand() % 26;
-            id += letra;
-        } else {
-
-            char numero = '0' + rand() % 10;
-            id += numero;
-        }
-    }
-    return id;
-}
-
-
-int Agregar_Activo::crearID() {
-    static int contador = 0;
-    contador = (contador % 100) + 1;
-    return contador;
-}
-
-
-
-void Agregar_Activo::agregar_activo(NodoM* usuario) {
-    cout << "Ingresar Nombre: ";
-    cin >> nombre_activo;
-    cout << "Ingresar Descripcion: ";
-    cin >> descripcion;
-    cout << endl;
-
-    idT = generarIDTRAN();
-
-    idR = crearID();
-    cout << "ID generado: " << idR << " Transc: "<< idT<< endl;
-    Activo* nuevoActivo = new Activo(idR, nombre_activo, descripcion, idT);
-    usuario->activos->insertar(*nuevoActivo);
-    cout << "Activo agregado correctamente al arbol AVL" << endl;
-}
-
-
-void Agregar_Activo::mostrar_activo(NodoM* usuario) {
-    cout << "activos de : " << usuario->nombreUsuario << endl;
-    usuario->activos->mostrar();
-}
+Activo::Activo(int idR, string nombre, string descripcion, string idT)
+    : idR(idR), nombre(nombre), descripcion(descripcion), idT(idT) {}

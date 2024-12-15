@@ -149,4 +149,5 @@ CMakeFiles/RentAct.dir/src/funciones_admin/Registrar_Usuario.cpp.o.ddi: \
  /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_admin/../../include/MatrizDispersa.h \
  /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_admin/../../include/NodoM.h \
  /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_admin/../../include/Arbol.h \
- /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_admin/../../include/NodoA.h
+ /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_admin/../../include/NodoA.h \
+ /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_admin/../../include/Activo.h

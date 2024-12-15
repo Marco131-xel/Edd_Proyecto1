@@ -43315,21 +43315,42 @@ namespace std __attribute__ ((__visibility__ ("default")))
 }
 # 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/arbol/../../include/NodoA.h" 2
 
+# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/arbol/../../include/Activo.h" 1
 
-# 5 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/arbol/../../include/NodoA.h"
+
+
+
+
+# 5 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/arbol/../../include/Activo.h"
+using namespace std;
+
+class Activo {
+    public:
+        int idR;
+        string nombre;
+        string descripcion;
+        string idT;
+        Activo(int idR, string nombre, string descripcion, string idT);
+
+        Activo();
+};
+# 6 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/arbol/../../include/NodoA.h" 2
+
 using namespace std;
 
 class NodoA {
     public:
 
-        int dato;
+        Activo activo;
+
         NodoA *izq;
         NodoA *der;
-        NodoA *branch;
+
         int altura;
 
 
-        NodoA(int valor, NodoA *branch);
+
+        NodoA(Activo a);
 };
 # 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/arbol/../../include/Arbol.h" 2
 
@@ -43338,7 +43359,7 @@ class Arbol {
     private:
         NodoA* raiz;
 
-        void insertarNodo(NodoA *&, int, NodoA*);
+        void insertarNodo(NodoA *&, Activo, NodoA*);
         void mostrarArbol(NodoA *, int) const;
         bool buscarArbol(NodoA *, int) const;
         void preOrden(NodoA *) const;
@@ -43353,9 +43374,9 @@ class Arbol {
 
     public:
         Arbol() : raiz(nullptr) {}
-        void insertar(int dato);
+        void insertar(Activo);
         void mostrar() const;
-        bool buscar(int dato) const;
+        bool buscar(int) const;
         void recorrerPreOrden() const;
         void recorrerInOrden() const;
         void recorrerPostOrden() const;
@@ -43363,18 +43384,18 @@ class Arbol {
 # 2 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/arbol/Arbol.cpp" 2
 
 
-void Arbol::insertar(int dato) {
-    insertarNodo(raiz, dato, nullptr);
+void Arbol::insertar(Activo nuevoActivo) {
+    insertarNodo(raiz, nuevoActivo, nullptr);
 }
 
-void Arbol::insertarNodo(NodoA *&arbol, int n, NodoA *branch) {
+void Arbol::insertarNodo(NodoA *&arbol, Activo nuevoActivo, NodoA *branch) {
     if (arbol == nullptr) {
-        arbol = new NodoA(n, branch);
+        arbol = new NodoA(nuevoActivo);
     } else {
-        if (n < arbol->dato) {
-            insertarNodo(arbol->izq, n, arbol);
+        if (nuevoActivo.idR < arbol->activo.idR) {
+            insertarNodo(arbol->izq, nuevoActivo, arbol);
         } else {
-            insertarNodo(arbol->der, n, arbol);
+            insertarNodo(arbol->der, nuevoActivo, arbol);
         }
     }
 
@@ -43395,7 +43416,8 @@ void Arbol::mostrarArbol(NodoA *arbol, int cont) const {
     for (int i = 0; i < cont; i++) {
         cout << "   ";
     }
-    cout << arbol->dato << "\n";
+    cout << "ID: " << arbol->activo.idR << " ; "<< "Nombre: "<< arbol->activo.nombre
+    << " ; " << "Descripcion: "<< arbol->activo.descripcion << endl;
     mostrarArbol(arbol->izq, cont+1);
 }
 
@@ -43408,10 +43430,10 @@ bool Arbol::buscarArbol(NodoA *arbol, int n) const {
     if (arbol == nullptr) {
         return false;
     }
-    if (arbol->dato == n) {
+    if (arbol->activo.idR == n) {
         return true;
     }
-    if (n < arbol->dato) {
+    if (n < arbol->activo.idR) {
         return buscarArbol(arbol->izq, n);
     }
     return buscarArbol(arbol->der, n);
@@ -43428,7 +43450,7 @@ void Arbol::inOrden(NodoA *arbol) const {
         return;
     }
     inOrden(arbol->izq);
-    cout << arbol->dato << " - ";
+    cout << arbol->activo.idR << " - ";
     inOrden(arbol->der);
 }
 

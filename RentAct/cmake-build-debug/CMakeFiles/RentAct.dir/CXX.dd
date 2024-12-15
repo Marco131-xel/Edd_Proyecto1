@@ -25,3 +25,5 @@ build CMakeFiles/RentAct.dir/src/nodos/NodoM.cpp.o: dyndep
 
 build CMakeFiles/RentAct.dir/src/nodos/NodoA.cpp.o: dyndep
 
+build CMakeFiles/RentAct.dir/src/funciones_user/Activo.cpp.o: dyndep
+

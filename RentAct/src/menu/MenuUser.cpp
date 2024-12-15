@@ -33,6 +33,7 @@ void MenuUser::display(NodoM* usuario) {
             break;
             case 2:
                 cout << "\t :::: Eliminar Activo :::: " << endl;
+                agregar.mostrar_activo(usuario);
             break;
             case 3:
                 cout << "\t :::: Modificar Activo :::: " << endl;

@@ -43321,21 +43321,42 @@ namespace std __attribute__ ((__visibility__ ("default")))
 }
 # 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/menu/../../include/NodoA.h" 2
 
+# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/menu/../../include/Activo.h" 1
 
-# 5 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/menu/../../include/NodoA.h"
+
+
+
+
+# 5 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/menu/../../include/Activo.h"
+using namespace std;
+
+class Activo {
+    public:
+        int idR;
+        string nombre;
+        string descripcion;
+        string idT;
+        Activo(int idR, string nombre, string descripcion, string idT);
+
+        Activo();
+};
+# 6 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/menu/../../include/NodoA.h" 2
+
 using namespace std;
 
 class NodoA {
     public:
 
-        int dato;
+        Activo activo;
+
         NodoA *izq;
         NodoA *der;
-        NodoA *branch;
+
         int altura;
 
 
-        NodoA(int valor, NodoA *branch);
+
+        NodoA(Activo a);
 };
 # 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/menu/../../include/Arbol.h" 2
 
@@ -43344,7 +43365,7 @@ class Arbol {
     private:
         NodoA* raiz;
 
-        void insertarNodo(NodoA *&, int, NodoA*);
+        void insertarNodo(NodoA *&, Activo, NodoA*);
         void mostrarArbol(NodoA *, int) const;
         bool buscarArbol(NodoA *, int) const;
         void preOrden(NodoA *) const;
@@ -43359,9 +43380,9 @@ class Arbol {
 
     public:
         Arbol() : raiz(nullptr) {}
-        void insertar(int dato);
+        void insertar(Activo);
         void mostrar() const;
-        bool buscar(int dato) const;
+        bool buscar(int) const;
         void recorrerPreOrden() const;
         void recorrerInOrden() const;
         void recorrerPostOrden() const;
@@ -43407,17 +43428,23 @@ class MenuUser {
 
 
 
+
 using namespace std;
 
 class Agregar_Activo {
     public:
     string nombre_activo;
     string descripcion;
-    string id;
+    int idR;
+    string idT;
+    string generarIDTRAN();
+    int crearID();
+
+    Activo nuevoActivo;
 
     Agregar_Activo();
     void agregar_activo(NodoM* usuario);
-    void mostrar_activo();
+    void mostrar_activo(NodoM* usuario);
 };
 # 3 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/menu/MenuUser.cpp" 2
 using namespace std;
@@ -43453,6 +43480,7 @@ void MenuUser::display(NodoM* usuario) {
             break;
             case 2:
                 cout << "\t :::: Eliminar Activo :::: " << endl;
+                agregar.mostrar_activo(usuario);
             break;
             case 3:
                 cout << "\t :::: Modificar Activo :::: " << endl;

@@ -43312,24 +43312,45 @@ namespace std __attribute__ ((__visibility__ ("default")))
 }
 # 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/nodos/../../include/NodoA.h" 2
 
+# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/nodos/../../include/Activo.h" 1
 
-# 5 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/nodos/../../include/NodoA.h"
+
+
+
+
+# 5 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/nodos/../../include/Activo.h"
+using namespace std;
+
+class Activo {
+    public:
+        int idR;
+        string nombre;
+        string descripcion;
+        string idT;
+        Activo(int idR, string nombre, string descripcion, string idT);
+
+        Activo();
+};
+# 6 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/nodos/../../include/NodoA.h" 2
+
 using namespace std;
 
 class NodoA {
     public:
 
-        int dato;
+        Activo activo;
+
         NodoA *izq;
         NodoA *der;
-        NodoA *branch;
+
         int altura;
 
 
-        NodoA(int valor, NodoA *branch);
+
+        NodoA(Activo a);
 };
 # 2 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/nodos/NodoA.cpp" 2
 
 
-NodoA::NodoA(int valor, NodoA *branch = nullptr)
-    : dato(valor), izq(nullptr), der(nullptr), altura(1){}
+NodoA::NodoA(Activo a)
+    : activo(a), izq(nullptr), der(nullptr), altura(1){}

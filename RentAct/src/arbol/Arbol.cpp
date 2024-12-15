@@ -1,18 +1,18 @@
 #include "../../include/Arbol.h"
 
 // Funcion para insertar nodo en el arbol
-void Arbol::insertar(int dato) {
-    insertarNodo(raiz, dato, nullptr);
+void Arbol::insertar(Activo nuevoActivo) {
+    insertarNodo(raiz, nuevoActivo, nullptr);
 }
 
-void Arbol::insertarNodo(NodoA *&arbol, int n, NodoA *branch) {
+void Arbol::insertarNodo(NodoA *&arbol, Activo nuevoActivo, NodoA *branch) {
     if (arbol == nullptr) {
-        arbol = new NodoA(n, branch);
+        arbol = new NodoA(nuevoActivo);
     } else {
-        if (n < arbol->dato) {
-            insertarNodo(arbol->izq, n, arbol);
+        if (nuevoActivo.idR < arbol->activo.idR) {
+            insertarNodo(arbol->izq, nuevoActivo, arbol);
         } else {
-            insertarNodo(arbol->der, n, arbol);
+            insertarNodo(arbol->der, nuevoActivo, arbol);
         }
     }
     // actualizar y balancear
@@ -33,7 +33,8 @@ void Arbol::mostrarArbol(NodoA *arbol, int cont) const {
     for (int i = 0; i < cont; i++) {
         cout << "   ";
     }
-    cout << arbol->dato << "\n";
+    cout << "ID: " << arbol->activo.idR << " ; "<< "Nombre: "<< arbol->activo.nombre
+    << " ; " << "Descripcion: "<< arbol->activo.descripcion << endl;
     mostrarArbol(arbol->izq, cont+1);
 }
 
@@ -46,10 +47,10 @@ bool Arbol::buscarArbol(NodoA *arbol, int n) const {
     if (arbol == nullptr) {
         return false;
     }
-    if (arbol->dato == n) {
+    if (arbol->activo.idR == n) {
         return true;
     }
-    if (n < arbol->dato) {
+    if (n < arbol->activo.idR) {
         return buscarArbol(arbol->izq, n);
     }
     return buscarArbol(arbol->der, n);
@@ -66,7 +67,7 @@ void Arbol::inOrden(NodoA *arbol) const {
         return;
     }
     inOrden(arbol->izq);
-    cout << arbol->dato << " - ";
+    cout << arbol->activo.idR << " - ";
     inOrden(arbol->der);
 }
 

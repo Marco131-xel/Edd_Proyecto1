@@ -27,4 +27,6 @@ add_executable(RentAct main.cpp
         src/nodos/NodoM.cpp
         src/nodos/NodoA.cpp
         include/NodoA.h
-        include/NodoM.h)
+        include/NodoM.h
+        src/funciones_user/Activo.cpp
+        include/Activo.h)

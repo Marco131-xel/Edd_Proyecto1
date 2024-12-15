@@ -7,7 +7,7 @@ class Arbol {
     private:
         NodoA* raiz;
         // Metodos del auxiliares
-        void insertarNodo(NodoA *&, int, NodoA*);
+        void insertarNodo(NodoA *&, Activo, NodoA*);
         void mostrarArbol(NodoA *, int) const;
         bool buscarArbol(NodoA *, int) const;
         void preOrden(NodoA *) const;
@@ -22,9 +22,9 @@ class Arbol {
 
     public:
         Arbol() : raiz(nullptr) {}
-        void insertar(int dato);
+        void insertar(Activo);
         void mostrar() const;
-        bool buscar(int dato) const;
+        bool buscar(int) const;
         void recorrerPreOrden() const;
         void recorrerInOrden() const;
         void recorrerPostOrden() const;
