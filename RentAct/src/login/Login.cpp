@@ -43,7 +43,7 @@ void Login::login_user() {
 
     if (matriz.buscarUsuario(nombre, password)) {
         cout << "\t\n -- Inicio de Sesion Exitoso -- \n" << endl;
-        menu_user.display(nombre);
+        menu_user.display(matriz.usuarioActual);
     } else {
         cout << "\n ** Usuario o Contrasenia incorrectos ** \n" << endl;
     }

@@ -2,6 +2,8 @@ CMakeFiles/RentAct.dir/src/nodos/NodoM.cpp.o.ddi: \
  /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/nodos/NodoM.cpp \
  /usr/include/stdc-predef.h \
  /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/nodos/../../include/NodoM.h \
+ /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/nodos/../../include/Arbol.h \
+ /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/nodos/../../include/NodoA.h \
  /usr/include/c++/14.2.1/iostream \
  /usr/include/c++/14.2.1/bits/requires_hosted.h \
  /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/c++config.h \

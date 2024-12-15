@@ -2,6 +2,9 @@ CMakeFiles/RentAct.dir/src/funciones_user/Agregar_Activo.cpp.o.ddi: \
  /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/Agregar_Activo.cpp \
  /usr/include/stdc-predef.h \
  /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/../../include/Agregar_Activo.h \
+ /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/../../include/NodoM.h \
+ /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/../../include/Arbol.h \
+ /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/../../include/NodoA.h \
  /usr/include/c++/14.2.1/iostream \
  /usr/include/c++/14.2.1/bits/requires_hosted.h \
  /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/c++config.h \

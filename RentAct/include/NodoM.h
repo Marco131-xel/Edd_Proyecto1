@@ -1,6 +1,6 @@
 #ifndef NODOM_H
 #define NODOM_H
-
+#include "Arbol.h"
 #include <iostream>
 
 using namespace std;
@@ -10,6 +10,9 @@ public:
     string nombreUsuario;
     string contrasenia;
     string nombreCompleto;
+
+    // Arbol AVL para almacenar los activos del usuario
+    Arbol *activos;
 
     // Puntero para moverme en la matriz
     NodoM *next; // Nodo a la dercha

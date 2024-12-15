@@ -9,7 +9,7 @@ MenuUser::MenuUser() {
 }
 
 // Seleccionar de las opciones
-void MenuUser::display(const string& usuario) {
+void MenuUser::display(NodoM* usuario) {
     int opt;
 
     do {
@@ -21,7 +21,7 @@ void MenuUser::display(const string& usuario) {
         cout << "5. Activos Rentados" << endl;
         cout << "6. Mis Activos Rentados" << endl;
         cout << "7. Cerrar Sesion" << endl;
-        cout << "\t\t\t\t\t\t\t\tUsuario: " << usuario <<endl;
+        cout << "\t\t\t\t\t\t\t\tUsuario: " << usuario->nombreUsuario <<endl;
         cout << "Seleccione una Opcion: ";
         cin >> opt;
         cout << endl;
@@ -29,7 +29,7 @@ void MenuUser::display(const string& usuario) {
         switch (opt) {
             case 1:
                 cout << "\t :::: Agregar Activo :::: " << endl;
-                agregar.agregar_activo();
+                agregar.agregar_activo(usuario);
             break;
             case 2:
                 cout << "\t :::: Eliminar Activo :::: " << endl;

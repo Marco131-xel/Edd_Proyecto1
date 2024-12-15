@@ -7,12 +7,13 @@ Agregar_Activo::Agregar_Activo() {
 }
 
 // Funcion para agregar activos
-void Agregar_Activo::agregar_activo() {
+void Agregar_Activo::agregar_activo(NodoM* usuario) {
     cout << "Ingresar Nombre: ";
     cin >> nombre_activo;
     cout << "Ingresar Descripcion: ";
     cin >> descripcion;
     cout << endl;
+    cout << "Activo agregado correctamente al arbol AVL" << endl;
 }
 
 // Funcion para mostrar los activos

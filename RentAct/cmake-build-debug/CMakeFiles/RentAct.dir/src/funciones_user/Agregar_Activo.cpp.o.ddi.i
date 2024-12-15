@@ -8,6 +8,15 @@
 # 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/../../include/Agregar_Activo.h" 1
 
 
+# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/../../include/NodoM.h" 1
+
+
+# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/../../include/Arbol.h" 1
+
+
+# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/../../include/NodoA.h" 1
+
+
 # 1 "/usr/include/c++/14.2.1/iostream" 1 3
 # 36 "/usr/include/c++/14.2.1/iostream" 3
        
@@ -43310,20 +43319,91 @@ namespace std __attribute__ ((__visibility__ ("default")))
 
 
 }
+# 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/../../include/NodoA.h" 2
+
+
+# 5 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/../../include/NodoA.h"
+using namespace std;
+
+class NodoA {
+    public:
+
+        int dato;
+        NodoA *izq;
+        NodoA *der;
+        NodoA *branch;
+        int altura;
+
+
+        NodoA(int valor, NodoA *branch);
+};
+# 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/../../include/Arbol.h" 2
+
+
+class Arbol {
+    private:
+        NodoA* raiz;
+
+        void insertarNodo(NodoA *&, int, NodoA*);
+        void mostrarArbol(NodoA *, int) const;
+        bool buscarArbol(NodoA *, int) const;
+        void preOrden(NodoA *) const;
+        void inOrden(NodoA *) const;
+        void postOrden(NodoA *) const;
+        int obtenerAltura(NodoA *) const;
+        int obtenerFactorBalance(NodoA *) const;
+        void actualizarAltura(NodoA *);
+        void balancear(NodoA *&, NodoA *);
+        void rotacionIzq(NodoA *&);
+        void rotacionDer(NodoA *&);
+
+    public:
+        Arbol() : raiz(nullptr) {}
+        void insertar(int dato);
+        void mostrar() const;
+        bool buscar(int dato) const;
+        void recorrerPreOrden() const;
+        void recorrerInOrden() const;
+        void recorrerPostOrden() const;
+};
+# 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/../../include/NodoM.h" 2
+
+
+using namespace std;
+
+class NodoM {
+public:
+    string nombreUsuario;
+    string contrasenia;
+    string nombreCompleto;
+
+
+    Arbol *activos;
+
+
+    NodoM *next;
+    NodoM *prev;
+    NodoM *up;
+    NodoM *down;
+    NodoM *foward;
+    NodoM *backward;
+
+
+    NodoM(string nombreUsuario, string contrasenia, string nombreCompleto);
+};
 # 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/../../include/Agregar_Activo.h" 2
 
 
-# 5 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/../../include/Agregar_Activo.h"
 using namespace std;
 
 class Agregar_Activo {
     public:
     string nombre_activo;
     string descripcion;
-    const string id;
+    string id;
 
     Agregar_Activo();
-    void agregar_activo();
+    void agregar_activo(NodoM* usuario);
     void mostrar_activo();
 };
 # 2 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/Agregar_Activo.cpp" 2
@@ -43335,12 +43415,13 @@ Agregar_Activo::Agregar_Activo() {
 }
 
 
-void Agregar_Activo::agregar_activo() {
+void Agregar_Activo::agregar_activo(NodoM* usuario) {
     cout << "Ingresar Nombre: ";
     cin >> nombre_activo;
     cout << "Ingresar Descripcion: ";
     cin >> descripcion;
     cout << endl;
+    cout << "Activo agregado correctamente al arbol AVL" << endl;
 }
 
 

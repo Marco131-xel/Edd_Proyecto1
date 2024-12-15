@@ -11,6 +11,11 @@
 # 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/matriz/../../include/NodoM.h" 1
 
 
+# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/matriz/../../include/Arbol.h" 1
+
+
+# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/matriz/../../include/NodoA.h" 1
+
 
 # 1 "/usr/include/c++/14.2.1/iostream" 1 3
 # 36 "/usr/include/c++/14.2.1/iostream" 3
@@ -43314,10 +43319,56 @@ namespace std __attribute__ ((__visibility__ ("default")))
 
 
 }
-# 5 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/matriz/../../include/NodoM.h" 2
+# 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/matriz/../../include/NodoA.h" 2
 
 
-# 6 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/matriz/../../include/NodoM.h"
+# 5 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/matriz/../../include/NodoA.h"
+using namespace std;
+
+class NodoA {
+    public:
+
+        int dato;
+        NodoA *izq;
+        NodoA *der;
+        NodoA *branch;
+        int altura;
+
+
+        NodoA(int valor, NodoA *branch);
+};
+# 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/matriz/../../include/Arbol.h" 2
+
+
+class Arbol {
+    private:
+        NodoA* raiz;
+
+        void insertarNodo(NodoA *&, int, NodoA*);
+        void mostrarArbol(NodoA *, int) const;
+        bool buscarArbol(NodoA *, int) const;
+        void preOrden(NodoA *) const;
+        void inOrden(NodoA *) const;
+        void postOrden(NodoA *) const;
+        int obtenerAltura(NodoA *) const;
+        int obtenerFactorBalance(NodoA *) const;
+        void actualizarAltura(NodoA *);
+        void balancear(NodoA *&, NodoA *);
+        void rotacionIzq(NodoA *&);
+        void rotacionDer(NodoA *&);
+
+    public:
+        Arbol() : raiz(nullptr) {}
+        void insertar(int dato);
+        void mostrar() const;
+        bool buscar(int dato) const;
+        void recorrerPreOrden() const;
+        void recorrerInOrden() const;
+        void recorrerPostOrden() const;
+};
+# 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/matriz/../../include/NodoM.h" 2
+
+
 using namespace std;
 
 class NodoM {
@@ -43325,6 +43376,9 @@ public:
     string nombreUsuario;
     string contrasenia;
     string nombreCompleto;
+
+
+    Arbol *activos;
 
 
     NodoM *next;
@@ -43359,6 +43413,7 @@ class MatrizDispersa {
         NodoM* enCabeceraV(NodoM* nodo);
 
         void mostrarCabeceras();
+        NodoM* usuarioActual;
 };
 # 2 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/matriz/Global.cpp" 2
 

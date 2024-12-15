@@ -3,6 +3,8 @@ CMakeFiles/RentAct.dir/src/matriz/Global.cpp.o.ddi: \
  /usr/include/stdc-predef.h \
  /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/matriz/../../include/MatrizDispersa.h \
  /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/matriz/../../include/NodoM.h \
+ /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/matriz/../../include/Arbol.h \
+ /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/matriz/../../include/NodoA.h \
  /usr/include/c++/14.2.1/iostream \
  /usr/include/c++/14.2.1/bits/requires_hosted.h \
  /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/c++config.h \

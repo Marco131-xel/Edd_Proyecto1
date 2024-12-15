@@ -22,6 +22,7 @@ class MatrizDispersa {
         NodoM* enCabeceraV(NodoM* nodo);
         // Pruebas
         void mostrarCabeceras();
+        NodoM* usuarioActual;
 };
 
 #endif //MATRIZDISPERSA_H

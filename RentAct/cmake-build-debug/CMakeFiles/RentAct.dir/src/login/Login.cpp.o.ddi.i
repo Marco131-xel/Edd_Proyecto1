@@ -43355,25 +43355,61 @@ class MenuAdmin {
 # 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/../../include/MenuUser.h" 1
 
 
-
-using namespace std;
-
-class MenuUser {
-    public:
-        MenuUser();
-        void display(const string& usuario);
-};
-# 5 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/Login.cpp" 2
-# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/../../include/Global.h" 1
-
-
-# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/../../include/MatrizDispersa.h" 1
-
-
 # 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/../../include/NodoM.h" 1
 
 
+# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/../../include/Arbol.h" 1
 
+
+# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/../../include/NodoA.h" 1
+
+
+
+
+using namespace std;
+
+class NodoA {
+    public:
+
+        int dato;
+        NodoA *izq;
+        NodoA *der;
+        NodoA *branch;
+        int altura;
+
+
+        NodoA(int valor, NodoA *branch);
+};
+# 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/../../include/Arbol.h" 2
+
+
+class Arbol {
+    private:
+        NodoA* raiz;
+
+        void insertarNodo(NodoA *&, int, NodoA*);
+        void mostrarArbol(NodoA *, int) const;
+        bool buscarArbol(NodoA *, int) const;
+        void preOrden(NodoA *) const;
+        void inOrden(NodoA *) const;
+        void postOrden(NodoA *) const;
+        int obtenerAltura(NodoA *) const;
+        int obtenerFactorBalance(NodoA *) const;
+        void actualizarAltura(NodoA *);
+        void balancear(NodoA *&, NodoA *);
+        void rotacionIzq(NodoA *&);
+        void rotacionDer(NodoA *&);
+
+    public:
+        Arbol() : raiz(nullptr) {}
+        void insertar(int dato);
+        void mostrar() const;
+        bool buscar(int dato) const;
+        void recorrerPreOrden() const;
+        void recorrerInOrden() const;
+        void recorrerPostOrden() const;
+};
+# 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/../../include/NodoM.h" 2
 
 
 using namespace std;
@@ -43383,6 +43419,9 @@ public:
     string nombreUsuario;
     string contrasenia;
     string nombreCompleto;
+
+
+    Arbol *activos;
 
 
     NodoM *next;
@@ -43395,7 +43434,23 @@ public:
 
     NodoM(string nombreUsuario, string contrasenia, string nombreCompleto);
 };
-# 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/../../include/MatrizDispersa.h" 2
+# 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/../../include/MenuUser.h" 2
+
+using namespace std;
+
+class MenuUser {
+    public:
+        MenuUser();
+        void display(NodoM* usuario);
+};
+# 5 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/Login.cpp" 2
+# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/../../include/Global.h" 1
+
+
+# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/../../include/MatrizDispersa.h" 1
+
+
+
 
 using namespace std;
 
@@ -43417,6 +43472,7 @@ class MatrizDispersa {
         NodoM* enCabeceraV(NodoM* nodo);
 
         void mostrarCabeceras();
+        NodoM* usuarioActual;
 };
 # 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/../../include/Global.h" 2
 
@@ -43463,7 +43519,7 @@ void Login::login_user() {
 
     if (matriz.buscarUsuario(nombre, password)) {
         cout << "\t\n -- Inicio de Sesion Exitoso -- \n" << endl;
-        menu_user.display(nombre);
+        menu_user.display(matriz.usuarioActual);
     } else {
         cout << "\n ** Usuario o Contrasenia incorrectos ** \n" << endl;
     }

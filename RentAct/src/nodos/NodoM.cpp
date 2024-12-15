@@ -3,6 +3,7 @@
 // Constructor para iniciar nodos Matriz
 NodoM::NodoM(string nombreUsuario, string contrasenia, string nombreCompleto)
     : nombreUsuario(nombreUsuario), contrasenia(contrasenia), nombreCompleto(nombreCompleto),
+    activos(new Arbol()),
     next(nullptr),
     prev(nullptr),
     up(nullptr),

@@ -8,6 +8,7 @@ using namespace std;
 MatrizDispersa::MatrizDispersa() {
     cabH = nullptr;
     cabV = nullptr;
+    usuarioActual = nullptr;
 }
 
 void MatrizDispersa::agregarUsuario(string departamento, string empresa, string nombreUsuario,
@@ -82,6 +83,7 @@ bool MatrizDispersa::buscarUsuario(string nombreUsuario, string contrasenia) {
         NodoM* actual = actualH->down;
         while (actual != nullptr) {
             if (actual->nombreUsuario == nombreUsuario && actual->contrasenia == contrasenia) {
+                usuarioActual = actual;
                 return true;
             }
             actual = actual->down; // se mueve en la cabe H
