@@ -43339,12 +43339,9 @@ class NodoA {
     public:
 
         Activo activo;
-
         NodoA *izq;
         NodoA *der;
-
         int altura;
-
 
 
         NodoA(Activo a);

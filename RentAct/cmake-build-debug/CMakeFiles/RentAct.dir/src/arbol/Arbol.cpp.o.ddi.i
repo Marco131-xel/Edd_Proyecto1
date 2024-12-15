@@ -43342,12 +43342,9 @@ class NodoA {
     public:
 
         Activo activo;
-
         NodoA *izq;
         NodoA *der;
-
         int altura;
-
 
 
         NodoA(Activo a);
@@ -43362,6 +43359,7 @@ class Arbol {
         void insertarNodo(NodoA *&, Activo, NodoA*);
         void mostrarArbol(NodoA *, int) const;
         bool buscarArbol(NodoA *, int) const;
+        void eliminarNodo(NodoA *&, int);
         void preOrden(NodoA *) const;
         void inOrden(NodoA *) const;
         void postOrden(NodoA *) const;
@@ -43374,9 +43372,13 @@ class Arbol {
 
     public:
         Arbol() : raiz(nullptr) {}
+        NodoA* obtenerMin(NodoA*);
+        NodoA* buscarNodo(NodoA*, int);
         void insertar(Activo);
         void mostrar() const;
         bool buscar(int) const;
+        void eliminar(int);
+        void modificarActivo(int, string, string);
         void recorrerPreOrden() const;
         void recorrerInOrden() const;
         void recorrerPostOrden() const;
@@ -43508,4 +43510,59 @@ void Arbol::rotacionDer(NodoA *&nodo) {
     nodo = aux;
     actualizarAltura(nodo->der);
     actualizarAltura(nodo);
+}
+
+
+void Arbol::eliminar(int n) {
+    eliminarNodo(raiz, n);
+}
+
+void Arbol::eliminarNodo(NodoA*& arbol, int n) {
+    if (arbol == nullptr) {
+        return;
+    }
+
+    if (n < arbol->activo.idR) {
+        eliminarNodo(arbol->izq, n);
+    } else if (n > arbol->activo.idR) {
+        eliminarNodo(arbol->der, n);
+    } else {
+
+        if (arbol->izq == nullptr || arbol->der == nullptr) {
+            NodoA* temp = arbol;
+            arbol = (arbol->izq == nullptr) ? arbol->der : arbol->izq;
+            delete temp;
+        } else {
+            NodoA* temp = obtenerMin(arbol->der);
+            arbol->activo.idR = temp->activo.idR;
+            eliminarNodo(arbol->der, temp->activo.idR);
+        }
+    }
+
+    if (arbol == nullptr) return;
+    actualizarAltura(arbol);
+    balancear(arbol, nullptr);
+}
+
+NodoA *Arbol::obtenerMin(NodoA * arbol) {
+    while (arbol->izq != nullptr) {
+        arbol = arbol->izq;
+    }
+    return arbol;
+}
+
+
+void Arbol::modificarActivo(int n, string nuevoNombre, string nuevaDescp) {
+    NodoA* nodo = buscarNodo(raiz, n);
+    if (nodo != nullptr) {
+        nodo->activo.nombre = nuevoNombre;
+        nodo->activo.descripcion = nuevaDescp;
+    }
+}
+
+NodoA* Arbol::buscarNodo(NodoA* arbol, int n) {
+    if (arbol == nullptr) return nullptr;
+    if (arbol->activo.idR== n) return arbol;
+    if (n < arbol->activo.idR) return buscarNodo(arbol->izq, n);
+    return buscarNodo(arbol->der, n);
 }
