@@ -30,4 +30,6 @@ add_executable(RentAct main.cpp
         include/NodoM.h
         src/funciones_user/Activo.cpp
         include/Activo.h
+        src/funciones_user/Rentar_Activo.cpp
+        include/Rentar_Activo.h
 )

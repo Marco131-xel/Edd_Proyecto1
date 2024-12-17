@@ -1,8 +1,11 @@
 #include "../../include/MenuUser.h"
 #include "../../include/Activo_User.h"
+#include "../../include/Rentar_Activo.h"
+
 using namespace std;
 
 Activo_User activo_user;
+Rentar_Activo rentar_activo;
 // Constructor Vacio
 MenuUser::MenuUser() {
 
@@ -41,9 +44,11 @@ void MenuUser::display(NodoM* usuario) {
             break;
             case 4:
                 cout << "\t :::: Rentar Activo :::: " << endl;
+                rentar_activo.rentarActivo(usuario);
             break;
             case 5:
                 cout << "\t :::: Activos Rentados :::: " << endl;
+                rentar_activo.activosRentados(usuario);
             break;
             case 6:
                 cout << "\t :::: Mis Activos Rentados :::: " << endl;

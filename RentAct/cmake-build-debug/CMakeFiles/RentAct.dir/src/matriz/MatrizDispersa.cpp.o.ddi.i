@@ -43504,9 +43504,10 @@ void MatrizDispersa::mostrarUsuario() {
         cout << "Departamento: " << auxH->nombreUsuario << endl;
 
         NodoM* aux = auxH->down;
+        NodoM* cabeceraEmpresa = enCabeceraV(aux);
         while (aux != nullptr) {
             cout << "  Usuario: " << aux->nombreUsuario
-                 << ", Empresa: " << enCabeceraV(aux)->nombreUsuario
+                 << ", Empresa: " << cabeceraEmpresa->nombreUsuario
                  << ", Nombre Completo: " << aux->nombreCompleto << endl;
             aux = aux->down;
         }
@@ -43599,7 +43600,15 @@ NodoM* MatrizDispersa::enCabeceraV(NodoM* nodo) {
     while (aux->up != nullptr) {
         aux = aux->up;
     }
-    return aux;
+
+    NodoM* cabecera = cabV;
+    while (cabecera != nullptr) {
+        if (cabecera == aux) {
+            return cabecera;
+        }
+        cabecera = cabecera->down;
+    }
+    return nullptr;
 }
 
 

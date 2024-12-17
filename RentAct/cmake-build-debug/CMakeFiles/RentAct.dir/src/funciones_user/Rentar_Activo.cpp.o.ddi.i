@@ -1,11 +1,11 @@
-# 0 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/Activo_User.cpp"
+# 0 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/Rentar_Activo.cpp"
 # 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/cmake-build-debug//"
 # 0 "<interno>"
 # 0 "<línea-de-órdenes>"
 # 1 "/usr/include/stdc-predef.h" 1 3 4
 # 0 "<línea-de-órdenes>" 2
-# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/Activo_User.cpp"
-# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/../../include/Activo_User.h" 1
+# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/Rentar_Activo.cpp"
+# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/../../include/Rentar_Activo.h" 1
 
 
 # 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/../../include/NodoM.h" 1
@@ -43415,127 +43415,43 @@ public:
 
     NodoM(string nombreUsuario, string contrasenia, string nombreCompleto);
 };
-# 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/../../include/Activo_User.h" 2
-
+# 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/../../include/Rentar_Activo.h" 2
 
 
 using namespace std;
 
-class Activo_User {
+class Rentar_Activo {
     public:
-    string nombre_activo;
-    string descripcion;
-    int idR;
-    string idT;
-    string generarIDTRAN();
-    int crearID();
 
-    Activo nuevoActivo;
+        int opt;
+        int idR;
+        int tiempo;
 
-    Activo_User();
-    void agregar_activo(NodoM* usuario);
-    void mostrar_activo(NodoM* usuario);
-    void eliminar_activo(NodoM* usuario);
-    void modificar_activo(NodoM* usuario);
+        Rentar_Activo();
+
+        void rentarActivo(NodoM*);
+        void activosRentados(NodoM*);
+        void misActivosRentados(NodoM*);
+
 };
-# 2 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/Activo_User.cpp" 2
+# 2 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_user/Rentar_Activo.cpp" 2
 
 
-
-Activo_User::Activo_User(): nuevoActivo() {
+Rentar_Activo::Rentar_Activo() {
 }
 
 
-string Activo_User::generarIDTRAN() {
-    string id;
-    for(int i = 0; i < 15; i++) {
-        if (i % 2 == 0) {
+void Rentar_Activo::rentarActivo(NodoM *usuario) {
 
-            char letra = 'a' + rand() % 26;
-            id += letra;
-        } else {
-
-            char numero = '0' + rand() % 10;
-            id += numero;
-        }
-    }
-    return id;
-}
-
-
-int Activo_User::crearID() {
-    static int contador = 0;
-    contador = (contador % 100) + 1;
-    return contador;
 }
 
 
 
-void Activo_User::agregar_activo(NodoM* usuario) {
-    cout << "Ingresar Nombre: ";
-    cin >> nombre_activo;
-    cout << "Ingresar Descripcion: ";
-    cin >> descripcion;
-    cout << endl;
+void Rentar_Activo::activosRentados(NodoM* usuario) {
 
-    idT = generarIDTRAN();
-
-    idR = crearID();
-    cout << "ID generado: " << idR << " Transc: "<< idT<< endl;
-    Activo* nuevoActivo = new Activo(idR, nombre_activo, descripcion, idT);
-    usuario->activos->insertar(*nuevoActivo);
-    cout << "\t -- Activo agregado -- \n" << endl;
 }
 
 
-void Activo_User::mostrar_activo(NodoM* usuario) {
-    cout << "\t %% Activos de: " << usuario->nombreUsuario << " %%" << endl;
-    usuario->activos->mostrar();
-    cout << "\n" << endl;
-}
-
-
-void Activo_User::eliminar_activo(NodoM *usuario) {
-    cout << "Ingrese el ID para eliminar activo: ";
-    cin >> idR;
-
-    if (usuario->activos->buscar(idR)) {
-
-        NodoA *nodo = usuario->activos->buscarNodo(usuario->activos->getRaiz(), idR);
-        if (nodo != nullptr) {
-            cout << "Datos del activo a eliminar: " << endl;
-            cout << "ID: " << nodo->activo.idR << endl;
-            cout << "Nombre: " << nodo->activo.nombre << endl;
-            cout << "Descripcion: " << nodo->activo.descripcion << endl;
-        }
-
-        usuario->activos->eliminar(idR);
-        cout << "\t --Activo eliminado--\n" << endl;
-    } else {
-        cout << "\t ** ID no encontrado en los activos **" << endl;
-    }
-}
-
-
-void Activo_User::modificar_activo(NodoM *usuario) {
-    cout << "Ingrese el ID para modificar activo: ";
-    cin >> idR;
-
-    if (usuario->activos->buscar(idR)) {
-
-        NodoA *nodo = usuario->activos->buscarNodo(usuario->activos->getRaiz(), idR);
-        if (nodo != nullptr) {
-            cout << "Datos del activo" << endl;
-            cout << "ID: " << nodo->activo.idR << "; Nombre: " << nodo->activo.nombre <<
-                "; Descripcion: " << nodo->activo.descripcion << endl;
-        }
-
-        cout << "Ingresa nueva descripcion: ";
-        cin >> descripcion;
-        usuario->activos->modificarActivo(idR, descripcion);
-        cout << "\t --Activo Modificado --\n" << endl;
-    } else {
-        cout << "\t ** ID no encontrado en los activos **" << endl;
-    }
+void Rentar_Activo::misActivosRentados(NodoM * usuario) {
 
 }

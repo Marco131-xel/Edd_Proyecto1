@@ -43452,9 +43452,34 @@ class Activo_User {
     void modificar_activo(NodoM* usuario);
 };
 # 3 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/menu/MenuUser.cpp" 2
+# 1 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/menu/../../include/Rentar_Activo.h" 1
+
+
+
+
+
+using namespace std;
+
+class Rentar_Activo {
+    public:
+
+        int opt;
+        int idR;
+        int tiempo;
+
+        Rentar_Activo();
+
+        void rentarActivo(NodoM*);
+        void activosRentados(NodoM*);
+        void misActivosRentados(NodoM*);
+
+};
+# 4 "/home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/menu/MenuUser.cpp" 2
+
 using namespace std;
 
 Activo_User activo_user;
+Rentar_Activo rentar_activo;
 
 MenuUser::MenuUser() {
 
@@ -43493,9 +43518,11 @@ void MenuUser::display(NodoM* usuario) {
             break;
             case 4:
                 cout << "\t :::: Rentar Activo :::: " << endl;
+                rentar_activo.rentarActivo(usuario);
             break;
             case 5:
                 cout << "\t :::: Activos Rentados :::: " << endl;
+                rentar_activo.activosRentados(usuario);
             break;
             case 6:
                 cout << "\t :::: Mis Activos Rentados :::: " << endl;
