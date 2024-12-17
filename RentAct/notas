@@ -1,0 +1,13 @@
+    Makefile
+Para compilar el programa necesitas el 
+compilador de Makefile.
+
+Comando para crear el programa
+    make
+Comando para para iniciar el programa en linux.
+necesitas una terminal en el directorio
+    ./RentAct
+Para Windows solo da click a RentAct.exe
+
+Ver graficas 
+se crean ahi 
