@@ -26,6 +26,18 @@ void Registrar_Usuario::registrar() {
 // Esta es de prueba para verificar Usuarios ingresados
 void Registrar_Usuario::mostrar() {
     matriz.mostrarUsuario();
-    cout << "\n\n\n" << endl;
+    cout << "\n\n" << endl;
     matriz.mostrarCabeceras();
+    matriz.generarGraphvizDot();
 }
+
+// para imprimir reportes
+void Registrar_Usuario::depaActivos() {
+    matriz.generarActivosDOT();
+}
+
+void Registrar_Usuario::empreActivos() {
+    matriz.generarEmpresasDOT();
+}
+
+

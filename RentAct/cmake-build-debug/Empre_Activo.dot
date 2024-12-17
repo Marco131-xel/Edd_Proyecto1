@@ -1,0 +1,18 @@
+digraph MatrizEmpresas {
+    rankdir=TB;
+    node [shape=rectangle];
+    "Max" [label="Empresa: Max"];
+    "M4RC0" [label="Usuario: marco"];
+    "Max" -> "M4RC0";
+    "1" [label="ID: 1\nNombre: laptop\nDescripción: intel"];
+    "M4RC0" -> "1";
+    "2" [label="ID: 2\nNombre: teclado\nDescripción: redragon"];
+    "M4RC0" -> "2";
+    "Megapaca" [label="Empresa: Megapaca"];
+    "Paola1307" [label="Usuario: paola"];
+    "Megapaca" -> "Paola1307";
+    "3" [label="ID: 3\nNombre: tanga\nDescripción: mane"];
+    "Paola1307" -> "3";
+    "4" [label="ID: 4\nNombre: brasier\nDescripción: mane"];
+    "Paola1307" -> "4";
+}

@@ -1,0 +1,18 @@
+digraph MatrizDispersa {
+    rankdir=LR;
+    node [shape=rectangle];
+    "Xela" [label="Departamento: Xela"];
+    "M4RC0" [label="Usuario: marco"];
+    "Xela" -> "M4RC0";
+    "1" [label="ID: 1\nNombre: laptop\nDescripción: intel"];
+    "M4RC0" -> "1";
+    "2" [label="ID: 2\nNombre: teclado\nDescripción: redragon"];
+    "M4RC0" -> "2";
+    "Toto" [label="Departamento: Toto"];
+    "Paola1307" [label="Usuario: paola"];
+    "Toto" -> "Paola1307";
+    "3" [label="ID: 3\nNombre: tanga\nDescripción: mane"];
+    "Paola1307" -> "3";
+    "4" [label="ID: 4\nNombre: brasier\nDescripción: mane"];
+    "Paola1307" -> "4";
+}

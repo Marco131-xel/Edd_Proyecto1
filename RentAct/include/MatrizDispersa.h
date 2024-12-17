@@ -1,6 +1,7 @@
 #ifndef MATRIZDISPERSA_H
 #define MATRIZDISPERSA_H
 #include "NodoM.h"
+#include <fstream>
 
 using namespace std;
 
@@ -11,6 +12,7 @@ class MatrizDispersa {
 
     public:
         MatrizDispersa();
+        ~MatrizDispersa(); // destructor
         void agregarUsuario(string departamento, string empresa, string nombreUsuario,
             string contrasenia, string nombreCompĺeto);
         void mostrarUsuario();
@@ -23,6 +25,12 @@ class MatrizDispersa {
         // Pruebas
         void mostrarCabeceras();
         NodoM* usuarioActual;
+        // Reportes
+        void generarGraphvizDot();
+        void generarActivosDOT();
+        void generarEmpresasDOT();
+        void generarActivosDOT(ofstream &, NodoM*);
+        void generarActivosRecDOT(ofstream &, NodoA*, const string &);
 };
 
 #endif //MATRIZDISPERSA_H

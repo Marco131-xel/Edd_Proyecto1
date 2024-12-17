@@ -1,0 +1,17 @@
+digraph G {
+  label="Matriz dispersa";
+  labelloc=top;
+  rankdir=LR;
+  subgraph cluster_departamentos {
+    label="Departamentos";
+    style=dashed;
+  "Xela" [shape=box, style=filled, color=lightblue];
+  "Toto" [shape=box, style=filled, color=lightblue];
+  }
+  "Max" [shape=ellipse, style=filled, color=lightgreen];
+  "Megapaca" [shape=ellipse, style=filled, color=lightgreen];
+  "Xela" -> "M4RC0";
+  "M4RC0" -> "Xela";
+  "Toto" -> "Paola1307";
+  "Paola1307" -> "Toto";
+}

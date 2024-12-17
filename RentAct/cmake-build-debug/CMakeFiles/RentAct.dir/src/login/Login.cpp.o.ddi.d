@@ -153,4 +153,8 @@ CMakeFiles/RentAct.dir/src/login/Login.cpp.o.ddi: \
  /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/../../include/NodoA.h \
  /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/../../include/Activo.h \
  /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/../../include/Global.h \
- /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/../../include/MatrizDispersa.h
+ /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/login/../../include/MatrizDispersa.h \
+ /usr/include/c++/14.2.1/fstream /usr/include/c++/14.2.1/bits/codecvt.h \
+ /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/basic_file.h \
+ /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/c++io.h \
+ /usr/include/c++/14.2.1/bits/fstream.tcc

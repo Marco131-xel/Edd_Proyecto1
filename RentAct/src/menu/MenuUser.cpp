@@ -24,7 +24,7 @@ void MenuUser::display(NodoM* usuario) {
         cout << "5. Activos Rentados" << endl;
         cout << "6. Mis Activos Rentados" << endl;
         cout << "7. Cerrar Sesion" << endl;
-        cout << "\t\t\t\t\t\t\t\tUsuario: " << usuario->nombreUsuario <<endl;
+        cout << "\t\t\t\tUsuario: " << usuario->nombreUsuario <<endl;
         cout << "Seleccione una Opcion: ";
         cin >> opt;
         cout << endl;

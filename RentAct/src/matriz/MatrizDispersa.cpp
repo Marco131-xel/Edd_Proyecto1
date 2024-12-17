@@ -11,6 +11,29 @@ MatrizDispersa::MatrizDispersa() {
     usuarioActual = nullptr;
 }
 
+// Destructor
+MatrizDispersa::~MatrizDispersa() {
+    NodoM* auxH = cabH;
+    while (auxH != nullptr) {
+        NodoM* auxUsuario = auxH->down;
+        while (auxUsuario != nullptr) {
+            NodoM* temp = auxUsuario;
+            auxUsuario = auxUsuario->down;
+            delete temp;
+        }
+        NodoM* tempH = auxH;
+        auxH = auxH->next;
+        delete tempH;
+    }
+
+    NodoM* auxV = cabV;
+    while (auxV != nullptr) {
+        NodoM* tempV = auxV;
+        auxV = auxV->down;
+        delete tempV;
+    }
+}
+
 void MatrizDispersa::agregarUsuario(string departamento, string empresa, string nombreUsuario,
     string contrasenia, string nombreCompleto) {
 
@@ -178,4 +201,134 @@ void MatrizDispersa::mostrarCabeceras() {
         auxV = auxV->down;
     }
     cout << "NULL" << endl;
+}
+
+void MatrizDispersa::generarGraphvizDot() {
+    ofstream archivo("matriz.dot");
+
+    archivo << "digraph G {\n";
+    archivo << "  label=\"Matriz dispersa\";\n";
+    archivo << "  labelloc=top;\n";
+    archivo << "  rankdir=LR;\n";
+
+    archivo << "  subgraph cluster_departamentos {\n";
+    archivo << "    label=\"Departamentos\";\n";
+    archivo << "    style=dashed;\n";
+
+    NodoM* auxH = cabH;
+    while (auxH != nullptr) {
+        archivo << "  \"" << auxH->nombreUsuario << "\" [shape=box, style=filled, color=lightblue];\n";
+        auxH = auxH->next;
+    }
+    archivo << "  }\n";
+
+    NodoM* auxV = cabV;
+    while (auxV != nullptr) {
+        archivo << "  \"" << auxV->nombreUsuario << "\" [shape=ellipse, style=filled, color=lightgreen];\n";
+        auxV = auxV->down;
+    }
+
+    auxH = cabH;
+    while (auxH != nullptr) {
+        NodoM* auxUsuario = auxH->down;
+        while (auxUsuario != nullptr) {
+            archivo << "  \"" << auxH->nombreUsuario << "\" -> \"" << auxUsuario->nombreUsuario << "\";\n";
+            archivo << "  \"" << auxUsuario->nombreUsuario << "\" -> \"" << enCabeceraV(auxUsuario)->nombreUsuario << "\";\n";
+            auxUsuario = auxUsuario->down;
+        }
+        auxH = auxH->next;
+    }
+
+    archivo << "}\n";
+    archivo.close();
+
+    cout << "\t -- El archivo DOT generado 'matriz.dot' -- \n" << endl;
+}
+
+void MatrizDispersa::generarActivosDOT() {
+    ofstream archivo("Depa_activos.dot");
+
+    archivo << "digraph MatrizDispersa {" << endl;
+    archivo << "    rankdir=LR;" << endl;
+    archivo << "    node [shape=rectangle];" << endl;
+
+    // Recorrer cabeceras horizontales (departamentos)
+    NodoM* auxH = cabH;
+    while (auxH != nullptr) {
+        archivo << "    \"" << auxH->nombreUsuario << "\" [label=\"Departamento: " << auxH->nombreUsuario << "\"];" << endl;
+
+        // Recorrer usuarios en cada departamento
+        NodoM* auxUsuario = auxH->down;
+        while (auxUsuario != nullptr) {
+            archivo << "    \"" << auxUsuario->nombreUsuario << "\" [label=\"Usuario: " << auxUsuario->nombreCompleto << "\"];" << endl;
+            archivo << "    \"" << auxH->nombreUsuario << "\" -> \"" << auxUsuario->nombreUsuario << "\";" << endl;
+
+            // Recorrer activos en el arbol AVL de cada usuario
+            if (auxUsuario->activos != nullptr) {
+                generarActivosDOT(archivo, auxUsuario);
+            }
+
+            auxUsuario = auxUsuario->down;
+        }
+        auxH = auxH->next;
+    }
+
+    archivo << "}" << endl;
+    archivo.close();
+
+    cout << "\t -- El archivo DOT generado 'Depa_Activos.dot' --\n" << endl;
+}
+
+void MatrizDispersa::generarActivosDOT(ofstream &archivo, NodoM* usuario) {
+    generarActivosRecDOT(archivo, usuario->activos->getRaiz(), usuario->nombreUsuario);
+}
+
+void MatrizDispersa::generarActivosRecDOT(ofstream &archivo, NodoA* nodo, const string &usuarioNombre) {
+    if (nodo == nullptr) return;
+
+    // Crear nodo para el activo
+    archivo << "    \"" << nodo->activo.idR << "\" [label=\"ID: " << nodo->activo.idR
+            << "\\nNombre: " << nodo->activo.nombre
+            << "\\nDescripción: " << nodo->activo.descripcion << "\"];" << endl;
+
+    // Conectar usuario con su activo
+    archivo << "    \"" << usuarioNombre << "\" -> \"" << nodo->activo.idR << "\";" << endl;
+
+    // Recorrer hijos izquierdo y derecho
+    generarActivosRecDOT(archivo, nodo->izq, usuarioNombre);
+    generarActivosRecDOT(archivo, nodo->der, usuarioNombre);
+}
+
+void MatrizDispersa::generarEmpresasDOT() {
+    ofstream archivo("Empre_Activo.dot");
+
+    archivo << "digraph MatrizEmpresas {" << endl;
+    archivo << "    rankdir=TB;" << endl;
+    archivo << "    node [shape=rectangle];" << endl;
+
+    // Recorrer cabeceras verticales (empresas)
+    NodoM* auxV = cabV;
+    while (auxV != nullptr) {
+        archivo << "    \"" << auxV->nombreUsuario << "\" [label=\"Empresa: " << auxV->nombreUsuario << "\"];" << endl;
+
+        // Recorrer usuarios en cada empresa
+        NodoM* auxUsuario = auxV->next;
+        while (auxUsuario != nullptr) {
+            archivo << "    \"" << auxUsuario->nombreUsuario << "\" [label=\"Usuario: " << auxUsuario->nombreUsuario << "\"];" << endl;
+            archivo << "    \"" << auxV->nombreUsuario << "\" -> \"" << auxUsuario->nombreUsuario << "\";" << endl;
+
+            // Recorrer activos en el arbol AVL de cada usuario
+            if (auxUsuario->activos != nullptr) {
+                generarActivosDOT(archivo, auxUsuario);
+            }
+
+            auxUsuario = auxUsuario->next;
+        }
+        auxV = auxV->down;
+    }
+
+    archivo << "}" << endl;
+    archivo.close();
+
+    cout << "\t -- El archivo DOT generado 'Empre_Activo.dot' --\n" << endl;
 }

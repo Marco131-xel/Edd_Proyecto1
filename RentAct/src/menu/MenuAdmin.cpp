@@ -39,9 +39,11 @@ void MenuAdmin::display() {
             break;
             case 3:
                 cout << " :::: Reporte Activos Disponibles de un Departamento :::: " << endl;
+                registrar_user.depaActivos();
             break;
             case 4:
                 cout << " :::: Reporte Activos Disponibles de una Empresa ::::" << endl;
+                registrar_user.empreActivos();
             break;
             case 5:
                 cout << " :::: Reporte Transacciones :::: " << endl;

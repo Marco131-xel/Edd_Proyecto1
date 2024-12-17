@@ -150,4 +150,8 @@ CMakeFiles/RentAct.dir/src/funciones_admin/Registrar_Usuario.cpp.o.ddi: \
  /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_admin/../../include/NodoM.h \
  /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_admin/../../include/Arbol.h \
  /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_admin/../../include/NodoA.h \
- /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_admin/../../include/Activo.h
+ /home/marco/Documentos/Diciembre/edd/Edd_Proyecto1/RentAct/src/funciones_admin/../../include/Activo.h \
+ /usr/include/c++/14.2.1/fstream /usr/include/c++/14.2.1/bits/codecvt.h \
+ /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/basic_file.h \
+ /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/c++io.h \
+ /usr/include/c++/14.2.1/bits/fstream.tcc

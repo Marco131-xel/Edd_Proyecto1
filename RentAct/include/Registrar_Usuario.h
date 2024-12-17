@@ -15,5 +15,7 @@ class Registrar_Usuario {
         Registrar_Usuario();
         void registrar();
         void mostrar();
+        void depaActivos();
+        void empreActivos();
 };
 #endif //REGISTRAR_USUARIO_H
